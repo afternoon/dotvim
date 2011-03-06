@@ -90,14 +90,6 @@ let g:snip_end_tag = "@"
 " read first 10 lines for modelines
 set modelines=10
 
-" VimClojure config
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#DynamicHighlighting = 1
-let vimclojure#ParenRainbow = 1
-let vimclojure#WantNailgun = 1
-let vimclojure#NailgunClient = "~/.vim/ng"
-let vimclojure#SplitPos = "bottom"
-
 " show search results in the centre of the window
 nnoremap n nzz
 nnoremap N Nzz
