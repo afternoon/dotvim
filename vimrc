@@ -57,12 +57,6 @@ set softtabstop=4
 set textwidth=80
 set autoindent
 
-" default keyword prog is just Google it
-set keywordprg=~/Documents/bin/google.py
-
-" include dictionary files and tags in autocomplete scanning
-set complete =.,w,b,u,t,i,k,]
-
 " case insensitive searching
 set ignorecase
 
@@ -70,6 +64,15 @@ set ignorecase
 set termencoding=macroman
 set fileencoding=utf-8
 set encoding=utf-8
+
+" default keyword prog is just Google it
+set keywordprg=~/Documents/bin/google.py
+
+" include dictionary files and tags in autocomplete scanning
+set complete =.,w,b,u,t,i,k,]
+
+" supertab
+let g:SuperTabDefaultCompletionType = "context"
 
 " HTML generation
 let html_use_css="yay"
@@ -97,3 +100,12 @@ nnoremap * *zz
 nnoremap # #zz
 nnoremap g* g*zz
 nnoremap g# g#zz
+
+" omni!
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType c set omnifunc=ccomplete#Complete
