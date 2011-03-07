@@ -28,3 +28,6 @@
 [submodule "bundle/surround.vim"]
 	path = bundle/surround.vim
 	url = https://github.com/vim-scripts/surround.vim.git
+[submodule "bundle/httplog"]
+	path = bundle/httplog
+	url = https://github.com/vim-scripts/httplog.git
