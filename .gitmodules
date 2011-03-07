@@ -13,9 +13,12 @@
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule "bundle/project"]
-	path = bundle/project
-	url = https://github.com/vim-scripts/project.tar.gz.git
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/phpunit"]
+	path = bundle/phpunit
+	url = https://github.com/vim-scripts/phpunit.git
+[submodule "bundle/project"]
+	path = bundle/project
+	url = https://github.com/vim-scripts/project.tar.gz.git
