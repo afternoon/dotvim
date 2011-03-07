@@ -34,3 +34,6 @@
 [submodule "bundle/pyrepl"]
 	path = bundle/pyrepl
 	url = https://github.com/Bogdanp/pyrepl.vim
+[submodule "bundle/ack.vim"]
+	path = bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
