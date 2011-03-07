@@ -214,3 +214,11 @@ imap <silent> <D-m> <Esc>:make<CR>
 
 " Fullscreen
 map <silent> <D-CR> :set invfullscreen<CR>
+
+"
+" Local machine settings
+"
+
+if file_readable(".gvimrc.local")
+    so .gvimrc.local " source local machine settings
+endif
