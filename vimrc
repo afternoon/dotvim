@@ -54,8 +54,12 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set textwidth=80
 set autoindent
+
+" line length fascism
+set textwidth=80
+set colorcolumn=+0
+hi ColorColumn ctermbg=black ctermfg=red
 
 " case insensitive searching
 set ignorecase
@@ -102,10 +106,14 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 
 " omni!
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+set completeopt=menu
+set omnifunc=syntaxcomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType ruby set omnifunc=rubycomplete#Complete
+autocmd FileType sql set omnifunc=sqlcomplete#Complete
+autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
