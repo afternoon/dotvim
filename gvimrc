@@ -215,6 +215,9 @@ imap <silent> <D-m> <Esc>:make<CR>
 " Fullscreen
 map <silent> <D-CR> :set invfullscreen<CR>
 
+" Update ctags
+map <silent> <F3> :!ctags -R --exclude=.svn --exclude=.git --exclude=log *<CR>
+
 "
 " Local machine settings
 "
