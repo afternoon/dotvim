@@ -55,3 +55,6 @@
 [submodule "bundle/html-advanced-text-objects"]
 	path = bundle/html-advanced-text-objects
 	url = https://github.com/vim-scripts/html-advanced-text-objects
+[submodule "bundle/matchit.zip"]
+	path = bundle/matchit.zip
+	url = https://github.com/vim-scripts/matchit.zip.git
