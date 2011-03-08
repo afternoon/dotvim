@@ -43,3 +43,6 @@
 [submodule "bundle/molokai"]
 	path = bundle/molokai
 	url = https://github.com/afternoon/molokai
+[submodule "bundle/trailing-whitespace"]
+	path = bundle/trailing-whitespace
+	url = https://github.com/bronson/vim-trailing-whitespace
