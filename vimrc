@@ -122,7 +122,10 @@ autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " ,a to Ack
-nnoremap <leader>a :Ack 
+nnoremap <leader>a :Ack
+
+" ,ac to AutoClose
+nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
 map <Leader>/ :TComment<CR>
@@ -145,3 +148,11 @@ nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
 nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
+
+" gundo
+let g:gundo_right = 1
+let g:gundo_preview_height = 100
+nnoremap <Leader>u :GundoToggle<CR>
+
+" fix whitespace
+nnoremap <Leader>fw :FixWhitespace<CR>

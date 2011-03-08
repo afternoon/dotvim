@@ -116,7 +116,7 @@ amenu Edit.Preferences.Command\ Line\.\.\. :tabedit ~/.vimrc<CR>
 amenu Edit.Preferences.GUI\.\.\. :tabedit ~/.gvimrc<CR>
 
 " add some shortcuts to menus
-amenu PopUp.-Sep- : 
+amenu PopUp.-Sep- :
 amenu PopUp.Keyword\ Lookup K
 amenu PopUp.Open\ Filename\ Under\ Cursor gf
 
@@ -205,8 +205,8 @@ map <silent> <D-9> :vertical resize 94<CR>
 imap <silent> <D-9> <Esc>:vertical resize 94<CR>
 
 " Commentify plugin hooks
-map <silent> <D-c> :TC<CR>j 
-imap <silent> <D-c> <Esc>:TC<CR>j 
+map <silent> <D-c> :TC<CR>j
+imap <silent> <D-c> <Esc>:TC<CR>j
 
 " Make
 map <silent> <D-m> :make<CR>
@@ -221,7 +221,6 @@ map <silent> <F3> :!ctags -R --exclude=.svn --exclude=.git --exclude=log *<CR>
 "
 " Local machine settings
 "
-
-if file_readable(".gvimrc.local")
-    so .gvimrc.local " source local machine settings
+if filereadable(expand("$HOME/.gvimrc.local"))
+  source $HOME/.gvimrc.local
 endif
