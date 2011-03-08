@@ -24,25 +24,22 @@ let mapleader = ","
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-" show matches when autocompleting in command mode
+" show command mode autocomplete matches
 set wildmenu
 
-" show the cursor position all the time
+" show current position
 set ruler
 
-" do incremental searching and highlight search results
+" searching/substitution
+set ignorecase
 set incsearch
 set hlsearch
+set gdefault " global substitute by default
+set showmatch
 
 " command editing
 set showcmd		    " display incomplete commands
 set cmdwinheight=20 " big window for command history (q:, q/, q?)
-
-" highlight matching parens etc
-set showmatch
-
-" check for mac newlines
-set ffs+=mac
 
 " disable line wrapping by default
 set nowrap
@@ -51,6 +48,9 @@ set nowrap
 set backupcopy=yes
 set autowrite
 set autowriteall
+
+" check for mac newlines
+set ffs+=mac
 
 " tabs, hard line wrapping, indentation
 set expandtab
@@ -63,9 +63,6 @@ set autoindent
 set textwidth=80
 set colorcolumn=+0
 hi ColorColumn ctermbg=black ctermfg=red
-
-" case insensitive searching
-set ignorecase
 
 " encoding settings
 set termencoding=macroman
@@ -133,6 +130,10 @@ map <Leader>/ :TComment<CR>
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
 nnoremap <leader>c <C-W>c
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 nmap <leader>p :Proj<CR>
 
@@ -151,7 +152,7 @@ vmap <leader>a: :Tabularize /:\zs<CR>
 
 " gundo
 let g:gundo_right = 1
-let g:gundo_preview_height = 100
+let g:gundo_preview_height = 50
 nnoremap <Leader>u :GundoToggle<CR>
 
 " fix whitespace
