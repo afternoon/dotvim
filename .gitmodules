@@ -40,3 +40,6 @@
 [submodule "bundle/css-color"]
 	path = bundle/css-color
 	url = https://github.com/skammer/vim-css-color
+[submodule "bundle/molokai"]
+	path = bundle/molokai
+	url = https://github.com/afternoon/molokai
