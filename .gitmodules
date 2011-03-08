@@ -37,3 +37,6 @@
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = https://github.com/tsaleh/vim-tcomment
