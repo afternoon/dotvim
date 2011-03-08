@@ -52,3 +52,6 @@
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim
+[submodule "bundle/html-advanced-text-objects"]
+	path = bundle/html-advanced-text-objects
+	url = https://github.com/vim-scripts/html-advanced-text-objects
