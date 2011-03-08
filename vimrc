@@ -18,6 +18,9 @@ filetype plugin indent on
 " turn on syntax highlighting
 syntax on
 
+" remap local leader
+let mapleader = ","
+
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
@@ -117,3 +120,28 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+
+" ,a to Ack
+nnoremap <leader>a :Ack 
+
+" comment lines with ,/
+map <Leader>/ :TComment<CR>
+
+" window management
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>c <C-W>c
+
+nmap <leader>p :Proj<CR>
+
+" shortcuts for deleting, saving, etc"
+nmap <leader>q :wqa!<CR>
+nmap <leader>w :w!<CR>
+nmap <leader><Esc> :q!<CR>
+nmap <leader>d :bd<CR>
+nmap <leader>D :bufdo bd<CR>
+
+" tabularize
+nmap <leader>a= :Tabularize /=<CR>
+vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a: :Tabularize /:\zs<CR>
+vmap <leader>a: :Tabularize /:\zs<CR>
