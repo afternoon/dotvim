@@ -142,8 +142,8 @@ nmap <leader>q :wqa!<CR>
 nmap <leader>w :w!<CR>
 nmap <leader><Esc> :q!<CR>
 nmap <leader>d :bd<CR>
-nmap <leader>d! :bd<CR>
-nmap <leader>D :bufdo bd<CR>
+nmap <leader>D :bd!<CR>
+nmap <leader>n :bufdo bd<CR>
 
 " tabularize
 nmap <leader>a= :Tabularize /=<CR>
