@@ -61,3 +61,6 @@
 [submodule "bundle/textobj"]
 	path = bundle/textobj
 	url = https://github.com/kana/vim-textobj-user
+[submodule "bundle/Puppet-Syntax-Highlighting"]
+	path = bundle/Puppet-Syntax-Highlighting
+	url = https://github.com/vim-scripts/Puppet-Syntax-Highlighting.git
