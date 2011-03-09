@@ -119,7 +119,7 @@ autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " ,a to Ack
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<Space>
 
 " ,ac to AutoClose
 nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
@@ -158,3 +158,11 @@ nnoremap <Leader>u :GundoToggle<CR>
 
 " fix whitespace
 nnoremap <Leader>fw :FixWhitespace<CR>
+
+nnoremap <F5> :make<CR>
+"
+" Text objects
+"
+
+" PHP-style functions
+map af aBj$o?function<CR>0
