@@ -26,6 +26,7 @@ set backspace=indent,eol,start
 
 " show command mode autocomplete matches
 set wildmenu
+set wildmode=longest,full
 
 " show current position
 set ruler
@@ -83,8 +84,8 @@ let html_use_css="yay"
 
 " Project plugin
 let g:proj_flags = "Lmst"
-let g:proj_window_width = 32
-let g:proj_window_increment = 32
+let g:proj_window_width = 37
+let g:proj_window_increment = 37
 
 " allow windows to be different sizes - required for Project plug in to stay
 " sane
@@ -118,14 +119,14 @@ autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
-" ,a to Ack
-nnoremap <leader>a :Ack<Space>
-
 " ,ac to AutoClose
 nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
 map <Leader>/ :TComment<CR>
+
+" comment lines with ,/
+map <Leader>A :Ack<Space>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -150,6 +151,9 @@ nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
 nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
+
+" sort
+map <Leader>s :!sort<CR>
 
 " gundo
 let g:gundo_right = 1
