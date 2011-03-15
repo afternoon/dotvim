@@ -62,7 +62,7 @@ set autoindent
 
 " line length fascism
 set textwidth=80
-set colorcolumn=+0
+set colorcolumn=+1
 hi ColorColumn ctermbg=black ctermfg=red
 
 " encoding settings
@@ -84,8 +84,8 @@ let html_use_css="yay"
 
 " Project plugin
 let g:proj_flags = "Lmst"
-let g:proj_window_width = 37
-let g:proj_window_increment = 37
+let g:proj_window_width = 35
+let g:proj_window_increment = 35
 
 " allow windows to be different sizes - required for Project plug in to stay
 " sane
@@ -119,7 +119,7 @@ autocmd FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
-" ,ac to AutoClose
+" Don't bind ,ac to AutoClose
 nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
@@ -149,6 +149,7 @@ nmap <leader>n :bufdo bd<CR>
 " tabularize
 nmap <leader>a= :Tabularize /=<CR>
 vmap <leader>a= :Tabularize /=<CR>
+nmap <leader>a=> :Tabularize /=><CR>
 vmap <leader>a=> :Tabularize /=><CR>
 nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
@@ -172,4 +173,4 @@ nnoremap <F5> :make<CR>
 "
 
 " PHP-style functions
-map af aBj$o?function<CR>0
+omap af aBj$o?function<CR>0
