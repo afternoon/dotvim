@@ -164,7 +164,9 @@ nnoremap <Leader>u :GundoToggle<CR>
 " fix whitespace
 nnoremap <Leader>fw :FixWhitespace<CR>
 
+" bind make to F5, like those other IDEs we don't name
 nnoremap <F5> :make<CR>
+
 "
 " Text objects
 "
