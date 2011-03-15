@@ -70,6 +70,3 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "bundle/makegreen"]
-	path = bundle/makegreen
-	url = https://github.com/reinh/vim-makegreen
