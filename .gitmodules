@@ -64,9 +64,6 @@
 [submodule "bundle/Puppet-Syntax-Highlighting"]
 	path = bundle/Puppet-Syntax-Highlighting
 	url = https://github.com/vim-scripts/Puppet-Syntax-Highlighting.git
-[submodule "bundle/phpunit"]
-	path = bundle/phpunit
-	url = git://github.com/afternoon/vim-phpunit.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
@@ -76,3 +73,6 @@
 [submodule "bundle/Markdown-syntax"]
 	path = bundle/Markdown-syntax
 	url = https://github.com/vim-scripts/Markdown-syntax.git
+[submodule "bundle/phpunit"]
+	path = bundle/phpunit
+	url = git@github.com:afternoon/vim-phpunit.git
