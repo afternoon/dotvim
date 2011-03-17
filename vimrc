@@ -125,8 +125,9 @@ nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
 " comment lines with ,/
 map <Leader>/ :TComment<CR>
 
-" comment lines with ,/
+" ack mappings, ,A to search, ,k to search for word under cursor
 map <Leader>A :Ack<Space>
+map <Leader>k "zyw:exe "Ack '" . @z . "'"<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -142,9 +143,8 @@ nmap <leader>p :Proj<CR>
 nmap <leader>q :wqa!<CR>
 nmap <leader>w :w!<CR>
 nmap <leader><Esc> :q!<CR>
-nmap <leader>d :bd<CR>
-nmap <leader>D :bd!<CR>
-nmap <leader>n :bufdo bd<CR>
+nmap <leader>d :bd!<CR>
+nmap <leader>D :bufdo bd<CR>
 
 " tabularize
 nmap <leader>a= :Tabularize /=<CR>
