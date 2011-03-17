@@ -3,4 +3,5 @@
 *.sw[nop]
 deps
 tags
+tags-ja
 .netrwhist
