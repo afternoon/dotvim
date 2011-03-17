@@ -79,3 +79,6 @@
 [submodule "bundle/ref"]
 	path = bundle/ref
 	url = https://github.com/thinca/vim-ref
+[submodule "bundle/vimproc"]
+	path = bundle/vimproc
+	url = https://github.com/Shougo/vimproc
