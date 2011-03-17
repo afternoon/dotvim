@@ -70,9 +70,6 @@ set termencoding=macroman
 set fileencoding=utf-8
 set encoding=utf-8
 
-" default keyword prog is just Google it
-set keywordprg=~/Documents/bin/google.py
-
 " include dictionary files and tags in autocomplete scanning
 set complete =.,w,b,u,t,i,k,]
 
@@ -167,6 +164,9 @@ nnoremap <Leader>fw :FixWhitespace<CR>
 
 " bind make to F5, like those other IDEs we don't name
 nnoremap <F5> :make<CR>
+
+" ref
+let g:ref_use_vimproc = "true"
 
 "
 " Text objects
