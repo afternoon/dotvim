@@ -70,9 +70,6 @@
 [submodule "bundle/xmledit"]
 	path = bundle/xmledit
 	url = https://github.com/vim-scripts/xmledit.git
-[submodule "bundle/Markdown-syntax"]
-	path = bundle/Markdown-syntax
-	url = https://github.com/vim-scripts/Markdown-syntax.git
 [submodule "bundle/phpunit"]
 	path = bundle/phpunit
 	url = git@github.com:afternoon/vim-phpunit.git
