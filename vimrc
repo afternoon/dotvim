@@ -168,6 +168,9 @@ nnoremap <F5> :make<CR>
 " ref
 let g:ref_use_vimproc = "true"
 
+" sudo make me a sandwich
+cmap w!! %!sudo tee > /dev/null %
+
 "
 " Text objects
 "
