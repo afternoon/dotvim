@@ -62,8 +62,10 @@ set autoindent
 
 " line length fascism
 set textwidth=80
-set colorcolumn=+1
-hi ColorColumn ctermbg=black ctermfg=red
+if exists("&colorcolumn")
+    set colorcolumn=+1
+    hi ColorColumn ctermbg=black ctermfg=red
+endif
 
 " encoding settings
 set termencoding=macroman
@@ -174,3 +176,10 @@ let g:ref_use_vimproc = "true"
 
 " PHP-style functions
 omap af aBj$o?function<CR>0
+
+"
+" Local machine settings
+"
+if filereadable(expand("$HOME/*vimrc.local"))
+    source $HOME/*vimrc.local
+endif
