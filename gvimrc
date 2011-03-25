@@ -228,6 +228,6 @@ map <silent> <F3> :!ctags -R --exclude=.svn --exclude=.git --exclude=log *<CR>
 "
 " Local machine settings
 "
-if filereadable(expand("$HOME/*gvimrc.local"))
-    source $HOME/*gvimrc.local
+if filereadable(expand("$HOME/.gvimrc.local"))
+    source $HOME/.gvimrc.local
 endif

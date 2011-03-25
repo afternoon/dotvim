@@ -183,6 +183,6 @@ omap af aBj$o?function<CR>0
 "
 " Local machine settings
 "
-if filereadable(expand("$HOME/*vimrc.local"))
-    source $HOME/*vimrc.local
+if filereadable(expand("$HOME/.vimrc.local"))
+    source $HOME/.vimrc.local
 endif
