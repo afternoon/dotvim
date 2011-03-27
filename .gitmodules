@@ -28,9 +28,6 @@
 [submodule "bundle/httplog"]
 	path = bundle/httplog
 	url = https://github.com/vim-scripts/httplog.git
-[submodule "bundle/pyrepl"]
-	path = bundle/pyrepl
-	url = https://github.com/Bogdanp/pyrepl.vim
 [submodule "bundle/ack.vim"]
 	path = bundle/ack.vim
 	url = https://github.com/mileszs/ack.vim.git
@@ -82,3 +79,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown
+[submodule "bundle/pyrepl"]
+	path = bundle/pyrepl
+	url = https://github.com/afternoon/pyrepl.vim
