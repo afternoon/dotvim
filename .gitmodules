@@ -81,4 +81,4 @@
 	url = https://github.com/tpope/vim-markdown
 [submodule "bundle/pyrepl"]
 	path = bundle/pyrepl
-	url = https://github.com/afternoon/pyrepl.vim
+	url = https://github.com/Bogdanp/pyrepl.vim.git
