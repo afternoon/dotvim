@@ -126,9 +126,6 @@ amenu PopUp.Open\ Filename\ Under\ Cursor gf
 " open project menu item
 amenu 10.326 File.-SepPrefs- :
 amenu 10.327 File.Projects :Proj<CR>
-if has("gui_macvim")
-    macmenukey File.Projects <D-P>
-endif
 
 "
 " Keys
