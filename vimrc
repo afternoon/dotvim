@@ -126,7 +126,7 @@ map <Leader>/ :TComment<CR>
 
 " ack mappings, ,A to search, ,k to search for word under cursor
 map <Leader>A :Ack<Space>
-map <Leader>k "zyw:exe "Ack '" . @z . "'"<CR>
+map <Leader>k viw"zy:exe "Ack '" . @z . "'"<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
