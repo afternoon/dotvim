@@ -82,3 +82,6 @@
 [submodule "bundle/confluencewiki.vim"]
 	path = bundle/confluencewiki.vim
 	url = https://github.com/vim-scripts/confluencewiki.vim.git
+[submodule "bundle/ini-syntax-definition"]
+	path = bundle/ini-syntax-definition
+	url = https://github.com/vim-scripts/ini-syntax-definition.git
