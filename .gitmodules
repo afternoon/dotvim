@@ -79,9 +79,6 @@
 [submodule "bundle/markdown"]
 	path = bundle/markdown
 	url = https://github.com/tpope/vim-markdown
-[submodule "bundle/pyrepl"]
-	path = bundle/pyrepl
-	url = https://github.com/Bogdanp/pyrepl.vim.git
 [submodule "bundle/confluencewiki.vim"]
 	path = bundle/confluencewiki.vim
 	url = https://github.com/vim-scripts/confluencewiki.vim.git
