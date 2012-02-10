@@ -85,3 +85,9 @@
 [submodule "bundle/ini-syntax-definition"]
 	path = bundle/ini-syntax-definition
 	url = https://github.com/vim-scripts/ini-syntax-definition.git
+[submodule "bundle/gmcs.vim"]
+	path = bundle/gmcs.vim
+	url = https://github.com/vim-scripts/gmcs.vim
+[submodule "bundle/vim-jade"]
+	path = bundle/vim-jade
+	url = https://github.com/digitaltoad/vim-jade
