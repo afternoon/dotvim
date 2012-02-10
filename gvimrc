@@ -105,7 +105,7 @@ set lines=80
 set columns=147
 
 if has("gui_macvim")
-    set guifont=Menlo:h11
+    set guifont=Menlo:h13
     set fuoptions=maxvert,maxhorz
 endif
 
