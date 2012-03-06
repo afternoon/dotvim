@@ -91,3 +91,6 @@
 [submodule "bundle/vim-jade"]
 	path = bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade
+[submodule "bundle/n3.vim"]
+	path = bundle/n3.vim
+	url = https://github.com/vim-scripts/n3.vim.git
