@@ -78,7 +78,7 @@
 	url = https://github.com/vim-scripts/confluencewiki.vim.git
 [submodule "bundle/ini-syntax-definition"]
 	path = bundle/ini-syntax-definition
-	url = https://github.com/vim-scripts/ini-syntax-definition.git
+	url = https://github.com/afternoon/ini-syntax-definition.git
 [submodule "bundle/gmcs.vim"]
 	path = bundle/gmcs.vim
 	url = https://github.com/vim-scripts/gmcs.vim
