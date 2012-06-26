@@ -40,9 +40,6 @@
 [submodule "bundle/trailing-whitespace"]
 	path = bundle/trailing-whitespace
 	url = https://github.com/bronson/vim-trailing-whitespace
-[submodule "bundle/gundo.vim"]
-	path = bundle/gundo.vim
-	url = http://github.com/sjl/gundo.vim.git
 [submodule "bundle/snipmate"]
 	path = bundle/snipmate
 	url = https://github.com/msanders/snipmate.vim
@@ -91,3 +88,12 @@
 [submodule "bundle/n3.vim"]
 	path = bundle/n3.vim
 	url = https://github.com/vim-scripts/n3.vim.git
+[submodule "bundle/Windows-PowerShell-Syntax-Plugin"]
+	path = bundle/Windows-PowerShell-Syntax-Plugin
+	url = https://github.com/vim-scripts/Windows-PowerShell-Syntax-Plugin.git
+[submodule "bundle/nagios-syntax"]
+	path = bundle/nagios-syntax
+	url = https://github.com/vim-scripts/nagios-syntax.git
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = git://github.com/scrooloose/nerdtree.git
