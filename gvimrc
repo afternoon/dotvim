@@ -216,7 +216,7 @@ if has("gui_macvim")
     imap <silent> <D-m> <Esc>:make<CR>
 
     " Fullscreen
-    map <silent> <D-CR> :set invfullscreen<CR>
+    map <silent> <D-F> :set invfullscreen<CR>
 endif
 
 " Update ctags
