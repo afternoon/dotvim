@@ -173,6 +173,12 @@ let g:ref_use_vimproc = "true"
 " sudo make me a sandwich
 cmap w!! %!sudo tee > /dev/null %
 
+" thesaurus
+if filereadable(expand("$HOME/.vim/mthesaur.txt"))
+    set thesaurus=$HOME/.vim/mthesaur.txt
+endif
+
+
 "
 " Text objects
 "
