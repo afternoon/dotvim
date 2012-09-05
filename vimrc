@@ -122,11 +122,11 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
-map <Leader>/ :TComment<CR>
+map <leader>/ :TComment<CR>
 
 " ack mappings, ,A to search, ,k to search for word under cursor
-map <Leader>A :Ack<Space>
-map <Leader>k viw"zy:exe "Ack '" . @z . "'"<CR>
+map <leader>A :Ack<Space>
+map <leader>k viw"zy:exe "Ack '" . @z . "'"<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -137,6 +137,8 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nmap <leader>p :Proj<CR>
+nmap <leader>n :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 
 " shortcuts for deleting, saving, etc"
 nmap <leader>q :wqa!<CR>
@@ -154,15 +156,18 @@ nmap <leader>a: :Tabularize /:\zs<CR>
 vmap <leader>a: :Tabularize /:\zs<CR>
 
 " sort
-map <Leader>s :!sort<CR>
+map <leader>s :!sort<CR>
+map <leader>u :!uniq<CR>
 
 " gundo
 let g:gundo_right = 1
 let g:gundo_preview_height = 50
-nnoremap <Leader>u :GundoToggle<CR>
 
 " fix whitespace
-nnoremap <Leader>fw :FixWhitespace<CR>
+nnoremap <leader>fw :FixWhitespace<CR>
+
+" hide search highlighting
+nmap <leader>l :nohl<CR>
 
 " bind make to F5, like those other IDEs we don't name
 nnoremap <F5> :make<CR>
@@ -178,6 +183,13 @@ if filereadable(expand("$HOME/.vim/mthesaur.txt"))
     set thesaurus=$HOME/.vim/mthesaur.txt
 endif
 
+" NERDTree
+let NERDTreeDirArrows=0
+let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$']
+let NERDTreeChDirMode=2
+let NERDTreeMinimalUI=1
+
+map <leader>m :NERDTreeFromBookmark 
 
 "
 " Text objects
