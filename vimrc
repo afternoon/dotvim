@@ -119,13 +119,13 @@ autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " Don't bind ,ac to AutoClose
-nmap <unique> <Leader>autoc <Plug>ToggleAutoCloseMappings
+nmap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
 map <leader>/ :TComment<CR>
 
 " ack mappings, ,A to search, ,k to search for word under cursor
-map <leader>A :Ack<Space>
+map <leader>a :Ack<Space>
 map <leader>k viw"zy:exe "Ack '" . @z . "'"<CR>
 
 " window management
@@ -137,8 +137,6 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 nmap <leader>p :Proj<CR>
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
 
 " shortcuts for deleting, saving, etc"
 nmap <leader>q :wqa!<CR>
@@ -148,12 +146,12 @@ nmap <leader>d :bd!<CR>
 nmap <leader>D :bufdo bd<CR>
 
 " tabularize
-nmap <leader>a= :Tabularize /=<CR>
-vmap <leader>a= :Tabularize /=<CR>
-nmap <leader>a=> :Tabularize /=><CR>
-vmap <leader>a=> :Tabularize /=><CR>
-nmap <leader>a: :Tabularize /:\zs<CR>
-vmap <leader>a: :Tabularize /:\zs<CR>
+nmap <leader>T= :Tabularize /=<CR>
+vmap <leader>T= :Tabularize /=<CR>
+nmap <leader>T=> :Tabularize /=><CR>
+vmap <leader>T=> :Tabularize /=><CR>
+nmap <leader>T: :Tabularize /:\zs<CR>
+vmap <leader>T: :Tabularize /:\zs<CR>
 
 " sort
 map <leader>s :!sort<CR>
@@ -188,8 +186,12 @@ let NERDTreeDirArrows=0
 let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$']
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
+let NERDTreeShowBookmarks=1
 
-map <leader>m :NERDTreeFromBookmark 
+nmap <leader>n :NERDTreeToggle<CR>
+
+" open NERDTree bookmark - trailing space is important!
+nmap <leader>b :NERDTreeFromBookmark 
 
 "
 " Text objects
