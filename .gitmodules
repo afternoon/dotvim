@@ -112,3 +112,6 @@
 [submodule "bundle/closetag.vim"]
 	path = bundle/closetag.vim
 	url = https://github.com/vim-scripts/closetag.vim.git
+[submodule "bundle/HTML-AutoCloseTag"]
+	path = bundle/HTML-AutoCloseTag
+	url = https://github.com/vim-scripts/HTML-AutoCloseTag.git
