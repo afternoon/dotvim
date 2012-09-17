@@ -4,9 +4,6 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/AutoClose"]
-	path = bundle/AutoClose
-	url = https://github.com/vim-scripts/AutoClose.git
 [submodule "bundle/tabular"]
 	path = bundle/tabular
 	url = https://github.com/godlygeek/tabular
