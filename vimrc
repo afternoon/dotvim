@@ -11,8 +11,9 @@ set shell=bash
 
 " activate pathogen and filetype plugins and indenting
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
+call pathogen#infect()
 filetype plugin indent on
 
 " turn on syntax highlighting
@@ -126,7 +127,11 @@ map <leader>/ :TComment<CR>
 
 " ack mappings, ,A to search, ,k to search for word under cursor
 map <leader>a :Ack<Space>
-map <leader>k viw"zy:exe "Ack '" . @z . "'"<CR>
+map <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
+
+" move through quickfix list
+map <leader>j :cnext<CR>
+map <leader>k :cprevious<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -192,6 +197,10 @@ nmap <leader>n :NERDTreeToggle<CR>
 
 " open NERDTree bookmark - trailing space is important!
 nmap <leader>b :NERDTreeFromBookmark 
+
+" triple quotes
+inoremap ''' ''''''<Esc>2hi
+inoremap """ """"""<Esc>2hi
 
 "
 " Text objects
