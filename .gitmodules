@@ -105,4 +105,7 @@
 	url = github:mattn/zencoding-vim.git
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = git@github.com:spencerdeinum/syntastic.git
+[submodule "bundle/nerdtree-ack"]
+	path = bundle/nerdtree-ack
+	url = git@github.com:tyok/nerdtree-ack.git
