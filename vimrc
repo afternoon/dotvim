@@ -159,8 +159,8 @@ nmap <leader>T: :Tabularize /:\zs<CR>
 vmap <leader>T: :Tabularize /:\zs<CR>
 
 " sort
-map <leader>s :!sort<CR>
-map <leader>u :!uniq<CR>
+map <leader>s :sort<CR>
+map <leader>u :sort u<CR>
 
 " gundo
 let g:gundo_right = 1
@@ -188,7 +188,7 @@ endif
 
 " NERDTree
 let NERDTreeDirArrows=0
-let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$']
+let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$', '\.\(jpg\|png\|gif\|pdf\)$']
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
