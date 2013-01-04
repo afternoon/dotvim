@@ -188,7 +188,7 @@ endif
 
 " NERDTree
 let NERDTreeDirArrows=0
-let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$', '\.\(jpg\|png\|gif\|pdf\|JPG\|PNG\|GIF\|PDF\)$']
+let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$']
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
