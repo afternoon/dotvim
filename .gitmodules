@@ -103,9 +103,6 @@
 [submodule "bundle/zencoding-vim"]
 	path = bundle/zencoding-vim
 	url = github:mattn/zencoding-vim.git
-[submodule "bundle/syntastic"]
-	path = bundle/syntastic
-	url = git@github.com:spencerdeinum/syntastic.git
 [submodule "bundle/nerdtree-ack"]
 	path = bundle/nerdtree-ack
 	url = git@github.com:tyok/nerdtree-ack.git
@@ -119,3 +116,6 @@
 [submodule "bundle/pig.vim"]
 	path = bundle/pig.vim
 	url = https://github.com/vim-scripts/pig.vim.git
+[submodule "bundle/syntastic"]
+	path = bundle/syntastic
+	url = git@github.com:scrooloose/syntastic.git
