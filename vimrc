@@ -82,13 +82,8 @@ let g:SuperTabDefaultCompletionType = "context"
 " HTML generation
 let html_use_css="yay"
 
-" Project plugin
-let g:proj_flags = "Lmst"
-let g:proj_window_width = 35
-let g:proj_window_increment = 35
-
-" allow windows to be different sizes - required for Project plug in to stay
-" sane
+" allow windows to be different sizes - required for Project/NERDTree plugins
+" to stay sane
 set noequalalways
 
 " Snippets plugin
@@ -141,8 +136,6 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-nmap <leader>p :Proj<CR>
-
 " shortcuts for deleting, saving, etc"
 nmap <leader>q :wqa!<CR>
 nmap <leader>w :w!<CR>
@@ -188,7 +181,7 @@ endif
 
 " NERDTree
 let NERDTreeDirArrows=0
-let NERDTreeIgnore=['\.py[co]$', '\~$', '\.class$', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$']
+let NERDTreeIgnore=['\~$', '\.\(py[co]\|class\|beam\|o\)$', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$', '^\(build\|ebin\)$', '^\(lib\|deps\|rel\|target\|vendor\|node_modules\)$']
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
