@@ -112,7 +112,6 @@
 [submodule "bundle/HTML-AutoCloseTag"]
 	path = bundle/HTML-AutoCloseTag
 	url = https://github.com/vim-scripts/HTML-AutoCloseTag.git
-	url = git@github.com:scrooloose/syntastic.git
 [submodule "bundle/pig.vim"]
 	path = bundle/pig.vim
 	url = https://github.com/vim-scripts/pig.vim.git
