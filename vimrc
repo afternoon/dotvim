@@ -195,6 +195,10 @@ nmap <leader>b :NERDTreeFromBookmark
 inoremap ''' ''''''<Esc>2hi
 inoremap """ """"""<Esc>2hi
 
+" format XML and JSON
+nmap <leader>px :%!xmllint --format %<CR>
+nmap <leader>pj :%!python -mjson.tool<CR>:FixWhitespace<CR>
+
 "
 " Text objects
 "
