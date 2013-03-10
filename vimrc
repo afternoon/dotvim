@@ -181,7 +181,7 @@ endif
 
 " NERDTree
 let NERDTreeDirArrows=0
-let NERDTreeIgnore=['\~$', '\.\(py[co]\|class\|beam\|o\)$', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$', '^\(build\|ebin\)$', '^\(lib\|deps\|rel\|target\|vendor\|node_modules\)$']
+let NERDTreeIgnore=['\(lib\|vendor\|node_modules\|deps\)$[[dir]]', '\(build\|ebin\|target\)$[[dir]]', '\.py[co]$[[file]]', '\~$[[file]]', '\.\(class\|beam\|o\)$[[file]]', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$[[file]]']
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
