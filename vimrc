@@ -46,6 +46,9 @@ set cmdwinheight=20 " big window for command history (q:, q/, q?)
 " disable line wrapping by default
 set nowrap
 
+" enable line numbers
+set number
+
 " backup and autosave
 set backupcopy=yes
 set autowrite
