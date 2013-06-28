@@ -172,12 +172,12 @@ if has("gui_macvim")
     imap <silent><D-5> <Esc>\5a
 
     " indent/outdent as TextMate et al
-    map <silent> <D-]> >>
-    imap <silent> <D-]> <Esc>>>a
-    vmap <silent> <D-]> >
-    map <silent> <D-[> <Lt><Lt>
-    imap <silent> <D-[> <Esc><Lt><Lt>a
-    vmap <silent> <D-[> <Lt>
+"    map <silent> <D-]> >>
+"    imap <silent> <D-]> <Esc>>>a
+"    vmap <silent> <D-]> >
+"    map <silent> <D-[> <Lt><Lt>
+"    imap <silent> <D-[> <Esc><Lt><Lt>a
+"    vmap <silent> <D-[> <Lt>
 
     " <D-Return> in TextMate is o in Vim
     map <silent> <D-Return> o

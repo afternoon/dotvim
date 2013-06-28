@@ -3,6 +3,17 @@
 " Ben Godfrey <ben@ben2.com>
 "
 
+" mac-user equivalent of a hair shirt
+" (just trying to get my hands on the home row)
+noremap <left> <nop>
+noremap <down> <nop>
+noremap <right> <nop>
+noremap <up> <nop>
+inoremap <left> <nop>
+inoremap <down> <nop>
+inoremap <right> <nop>
+inoremap <up> <nop>
+
 " this could be useful ;-)
 set nocompatible
 
@@ -11,15 +22,13 @@ set shell=bash
 
 " activate pathogen and filetype plugins and indenting
 filetype off
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
 call pathogen#infect()
 filetype plugin indent on
 
 " turn on syntax highlighting
 syntax on
 
-" remap local leader
+" remap leader
 let mapleader = ","
 
 " allow backspacing over everything in insert mode
@@ -63,6 +72,10 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set autoindent
+set formatoptions=tcoqn
+
+" line numbers
+set number
 
 " line length fascism
 set textwidth=80
@@ -118,18 +131,18 @@ autocmd FileType sql set omnifunc=sqlcomplete#Complete
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " Don't bind ,ac to AutoClose
-nmap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
+nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " comment lines with ,/
-map <leader>/ :TComment<CR>
+noremap <leader>/ :TComment<CR>
 
 " ack mappings, ,A to search, ,k to search for word under cursor
-map <leader>a :Ack<Space>
-map <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
+noremap <leader>a :Ack<Space>
+noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
 
 " move through quickfix list
-map <leader>j :cnext<CR>
-map <leader>k :cprevious<CR>
+noremap <leader>j :cnext<CR>
+noremap <leader>k :cprevious<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -140,23 +153,23 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " shortcuts for deleting, saving, etc"
-nmap <leader>q :wqa!<CR>
-nmap <leader>w :w!<CR>
-nmap <leader><Esc> :q!<CR>
-nmap <leader>d :bd!<CR>
-nmap <leader>D :bufdo bd<CR>
+nnoremap <leader>q :wqa!<CR>
+nnoremap <leader>w :w!<CR>
+nnoremap <leader><Esc> :q!<CR>
+nnoremap <leader>d :bd!<CR>
+nnoremap <leader>D :bufdo bd<CR>
 
 " tabularize
-nmap <leader>T= :Tabularize /=<CR>
-vmap <leader>T= :Tabularize /=<CR>
-nmap <leader>T=> :Tabularize /=><CR>
-vmap <leader>T=> :Tabularize /=><CR>
-nmap <leader>T: :Tabularize /:\zs<CR>
-vmap <leader>T: :Tabularize /:\zs<CR>
+nnoremap <leader>T= :Tabularize /=<CR>
+vnoremap <leader>T= :Tabularize /=<CR>
+nnoremap <leader>T=> :Tabularize /=><CR>
+vnoremap <leader>T=> :Tabularize /=><CR>
+nnoremap <leader>T: :Tabularize /:\zs<CR>
+vnoremap <leader>T: :Tabularize /:\zs<CR>
 
 " sort
-map <leader>s :sort<CR>
-map <leader>u :sort u<CR>
+noremap <leader>s :sort<CR>
+noremap <leader>u :sort u<CR>
 
 " gundo
 let g:gundo_right = 1
@@ -166,7 +179,7 @@ let g:gundo_preview_height = 50
 nnoremap <leader>fw :FixWhitespace<CR>
 
 " hide search highlighting
-nmap <leader>l :nohl<CR>
+nnoremap <leader>l :nohl<CR>
 
 " bind make to F5, like those other IDEs we don't name
 nnoremap <F5> :make<CR>
@@ -175,7 +188,7 @@ nnoremap <F5> :make<CR>
 let g:ref_use_vimproc = "true"
 
 " sudo make me a sandwich
-cmap w!! %!sudo tee > /dev/null %
+cnoremap w!! %!sudo tee > /dev/null %
 
 " thesaurus
 if filereadable(expand("$HOME/.vim/mthesaur.txt"))
@@ -189,29 +202,27 @@ let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 
-nmap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle<CR>
 
 " open NERDTree bookmark - trailing space is important!
-nmap <leader>b :NERDTreeFromBookmark 
+nnoremap <leader>b :NERDTreeFromBookmark 
 
 " triple quotes
 inoremap ''' ''''''<Esc>2hi
 inoremap """ """"""<Esc>2hi
 
 " format XML and JSON
-nmap <leader>px :%!xmllint --format %<CR>
-nmap <leader>pj :%!python -mjson.tool<CR>:FixWhitespace<CR>
+nnoremap <leader>px :%!xmllint --format %<CR>
+nnoremap <leader>pj :%!python -mjson.tool<CR>:FixWhitespace<CR>
 
-"
-" Text objects
-"
+" keep visual selection after indent
+vnoremap > >gv
+vnoremap < <gv
 
-" PHP-style functions
-omap af aBj$o?function<CR>0
+" Text object for PHP-style functions
+onoremap af aBj$o?function<CR>0
 
-"
 " Local machine settings
-"
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
 endif
