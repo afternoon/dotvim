@@ -73,6 +73,10 @@ set shiftwidth=4
 set softtabstop=4
 set autoindent
 set formatoptions=tcoqn
+set nojoinspaces
+
+" don't redraw screen while running macros (increase speed)
+set lazyredraw
 
 " line numbers
 set number
@@ -120,25 +124,22 @@ nnoremap g# g#zz
 " omni!
 set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
-autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType sql set omnifunc=sqlcomplete#Complete
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-
-" Don't bind ,ac to AutoClose
-nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
-
-" comment lines with ,/
-noremap <leader>/ :TComment<CR>
+"autocmd FileType c set omnifunc=ccomplete#Complete
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType ruby set omnifunc=rubycomplete#Complete
+"autocmd FileType sql set omnifunc=sqlcomplete#Complete
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " ack mappings, ,A to search, ,k to search for word under cursor
 noremap <leader>a :Ack<Space>
 noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
+
+" Don't bind ,ac to AutoClose (makes response to ,a faster)
+nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " move through quickfix list
 noremap <leader>j :cnext<CR>

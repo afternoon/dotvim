@@ -167,10 +167,6 @@ if has("gui_macvim")
     imap <silent> <S-D-Left> <Esc>:tabprevious<CR>
     imap <silent> <S-D-Right> <Esc>:tabnext<CR>
 
-    " Map HTML start-end tag matching to Cmd-5
-    map <silent><D-5> \5
-    imap <silent><D-5> <Esc>\5a
-
     " indent/outdent as TextMate et al
 "    map <silent> <D-]> >>
 "    imap <silent> <D-]> <Esc>>>a
@@ -179,41 +175,9 @@ if has("gui_macvim")
 "    imap <silent> <D-[> <Esc><Lt><Lt>a
 "    vmap <silent> <D-[> <Lt>
 
-    " <D-Return> in TextMate is o in Vim
-    map <silent> <D-Return> o
-    imap <silent> <D-Return> <Esc>o
-
-    " <D-P> to open project plugin window
-    map <silent> <D-P> :Proj<CR>
-    imap <silent> <D-P> <Esc>:Proj<CR>
-
-    " <D-T> to open tag list window
-    map <silent> <D-L> :TlistToggle<CR>
-    imap <silent> <D-L> <Esc>:TlistToggle<CR>
-
-    " <D-r> to disable line wrapping
-    map <silent> <D-r> :setlocal formatoptions=<CR>
-    imap <silent> <D-r> <Esc>:setlocal formatoptions=<CR>
-
-    " Vim windows (as oppose to OS X windows)
-    map <silent> <D-n> :vsplit<CR>
-    imap <silent> <D-n> <Esc>:vsplit<CR>
-
     " <D-8> to set window width to 80 chars
     map <silent> <D-8> :vertical resize 80<CR>
     imap <silent> <D-8> <Esc>:vertical resize 80<CR>
-
-    " <D-9> to set window width to 94 chars
-    map <silent> <D-9> :vertical resize 94<CR>
-    imap <silent> <D-9> <Esc>:vertical resize 94<CR>
-
-    " Commentify plugin hooks
-    map <silent> <D-c> :TC<CR>j
-    imap <silent> <D-c> <Esc>:TC<CR>j
-
-    " Make
-    map <silent> <D-m> :make<CR>
-    imap <silent> <D-m> <Esc>:make<CR>
 
     " Fullscreen
     map <silent> <D-F> :set invfullscreen<CR>
