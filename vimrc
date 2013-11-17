@@ -3,6 +3,69 @@
 " Ben Godfrey <ben@ben2.com>
 "
 
+" be iMproved
+set nocompatible
+
+" required for vundle
+filetype off
+
+" init vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" add vundle as a bundle for updating/to prevent cleaning
+Bundle 'gmarik/vundle'
+
+" BUNDLES!!
+Bundle 'ervandew/supertab'
+Bundle 'mileszs/ack.vim'
+Bundle 'msanders/snipmate.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'sukima/xmledit'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tyok/nerdtree-ack'
+Bundle 'Phize/QFixToggle'
+Bundle 'vim-scripts/netrw.vim'
+
+" fuzzy finding
+"Bundle 'wincent/command-t'
+Bundle 'kien/ctrlp.vim'
+
+" autoclosing
+"Bundle 'vim-scripts/AutoClose'
+Bundle 'Raimondi/delimitMate'
+
+" colour schemes
+Bundle 'afternoon/molokai'
+
+" syntax highlighting bundles
+Bundle 'afternoon/ini-syntax-definition'
+Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'elzr/vim-json'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'skammer/vim-css-color'
+Bundle 'tpope/vim-markdown'
+Bundle 'vim-scripts/Puppet-Syntax-Highlighting'
+Bundle 'vim-scripts/httplog'
+Bundle 'vim-scripts/n3.vim'
+Bundle 'vim-scripts/nginx.vim'
+
+" new and potentially deadly
+"Bundle 'mhinz/vim-startify'
+"Bundle 'bling/vim-airline'
+"Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'tpope/vim-abolish'
+"Bundle 'terryma/vim-multiple-cursors'
+"Bundle 'Valloric/YouCompleteMe'
+
+" enable filetype magic
+filetype plugin indent on
+
 " mac-user equivalent of a hair shirt
 " (just trying to get my hands on the home row)
 noremap <left> <nop>
@@ -14,16 +77,8 @@ inoremap <down> <nop>
 inoremap <right> <nop>
 inoremap <up> <nop>
 
-" this could be useful ;-)
-set nocompatible
-
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
 set shell=bash
-
-" activate pathogen and filetype plugins and indenting
-filetype off
-call pathogen#infect()
-filetype plugin indent on
 
 " turn on syntax highlighting
 syntax on
@@ -124,15 +179,6 @@ nnoremap g# g#zz
 " omni!
 set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
-"autocmd FileType c set omnifunc=ccomplete#Complete
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType ruby set omnifunc=rubycomplete#Complete
-"autocmd FileType sql set omnifunc=sqlcomplete#Complete
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 
 " ack mappings, ,A to search, ,k to search for word under cursor
 noremap <leader>a :Ack<Space>
@@ -142,39 +188,29 @@ noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
 nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " move through quickfix list
+noremap <leader>f :QFix<CR>
 noremap <leader>j :cnext<CR>
 noremap <leader>k :cprevious<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
 nnoremap <leader>c <C-W>c
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-" shortcuts for deleting, saving, etc"
+" shortcuts for deleting, saving, etc
 nnoremap <leader>q :wqa!<CR>
 nnoremap <leader>w :w!<CR>
 nnoremap <leader><Esc> :q!<CR>
 nnoremap <leader>d :bd!<CR>
 nnoremap <leader>D :bufdo bd<CR>
 
-" tabularize
-nnoremap <leader>T= :Tabularize /=<CR>
-vnoremap <leader>T= :Tabularize /=<CR>
-nnoremap <leader>T=> :Tabularize /=><CR>
-vnoremap <leader>T=> :Tabularize /=><CR>
-nnoremap <leader>T: :Tabularize /:\zs<CR>
-vnoremap <leader>T: :Tabularize /:\zs<CR>
-
 " sort
-noremap <leader>s :sort<CR>
-noremap <leader>u :sort u<CR>
-
-" gundo
-let g:gundo_right = 1
-let g:gundo_preview_height = 50
+noremap <leader>S :sort<CR>
+noremap <leader>U :sort u<CR>
 
 " fix whitespace
 nnoremap <leader>fw :FixWhitespace<CR>
@@ -185,11 +221,8 @@ nnoremap <leader>l :nohl<CR>
 " bind make to F5, like those other IDEs we don't name
 nnoremap <F5> :make<CR>
 
-" ref
-let g:ref_use_vimproc = "true"
-
 " sudo make me a sandwich
-cnoremap w!! %!sudo tee > /dev/null %
+cnoremap <leader>W %!sudo tee > /dev/null %
 
 " thesaurus
 if filereadable(expand("$HOME/.vim/mthesaur.txt"))
@@ -203,6 +236,7 @@ let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 
+" open NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
 
 " open NERDTree bookmark - trailing space is important!
@@ -212,16 +246,9 @@ nnoremap <leader>b :NERDTreeFromBookmark
 inoremap ''' ''''''<Esc>2hi
 inoremap """ """"""<Esc>2hi
 
-" format XML and JSON
-nnoremap <leader>px :%!xmllint --format %<CR>
-nnoremap <leader>pj :%!python -mjson.tool<CR>:FixWhitespace<CR>
-
 " keep visual selection after indent
 vnoremap > >gv
 vnoremap < <gv
-
-" Text object for PHP-style functions
-onoremap af aBj$o?function<CR>0
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))

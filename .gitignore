@@ -1,7 +1,6 @@
 .DS_Store
-*.beam
 *.sw[nop]
 deps
 tags
-tags-ja
 .netrwhist
+bundle/
