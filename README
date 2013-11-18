@@ -6,11 +6,14 @@ afternoon's Vim Config
 - Disables the arrow keys!
 - Maps lots of stuff with <leader>
 - Has been evolving for a while and is probably crufty
-- Does a fairly shit job of setting up autocomplete (buffer only, nothing clever)
+- Doesn't have great autocomplete (buffer only, nothing clever)
 
-Usage
------
+See top of vimrc for the bundle list.
 
-- Clone to .vim or vimfiles
-- Clone Vundle into bundle/vundle (or submodule? YMMV)
-- :BundleInstall to install/update bundles
+Install
+-------
+
+- git clone git@github.com:afternoon/dotvim ~/.vim (or vimfiles)
+- mkdir -p ~/.vim/bundle
+- git clone git@github.com:gmarik/vundle ~/.vim/bundle/vundle
+- :BundleInstall
