@@ -22,7 +22,6 @@ Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'mhinz/vim-startify'
 Bundle 'mileszs/ack.vim'
-Bundle 'garbas/vim-snipmate'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
 Bundle 'sukima/xmledit'
@@ -33,6 +32,12 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/netrw.vim'
+
+" garbas' snipmate
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'tomtom/tlib_vim'
+Bundle 'garbas/vim-snipmate'
+Bundle 'honza/vim-snippets'
 
 " NERDTree browser
 Bundle 'scrooloose/nerdtree'
