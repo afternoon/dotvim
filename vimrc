@@ -26,6 +26,7 @@ Bundle 'sukima/xmledit'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-unimpaired'
 Bundle 'tyok/nerdtree-ack'
 Bundle 'Phize/QFixToggle'
 Bundle 'vim-scripts/netrw.vim'
@@ -189,8 +190,6 @@ nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " move through quickfix list
 noremap <leader>f :QFix<CR>
-noremap <leader>j :cnext<CR>
-noremap <leader>k :cprevious<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
@@ -231,16 +230,19 @@ endif
 
 " NERDTree
 let NERDTreeDirArrows=0
-let NERDTreeIgnore=['\(lib\|vendor\|node_modules\|deps\)$[[dir]]', '\(build\|ebin\|target\)$[[dir]]', '\.py[co]$[[file]]', '\~$[[file]]', '\.\(class\|beam\|o\)$[[file]]', '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$[[file]]']
+let NERDTreeIgnore=[
+            \ '\(lib\|vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
+            \ '\(build\|ebin\|target\)$[[dir]]',
+            \ '\.py[co]$[[file]]',
+            \ '\~$[[file]]',
+            \ '\.\(class\|beam\|o\)$[[file]]',
+            \ '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$[[file]]'
+            \]
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
-
-" open NERDTree
 nnoremap <leader>n :NERDTreeToggle<CR>
-
-" open NERDTree bookmark - trailing space is important!
-nnoremap <leader>b :NERDTreeFromBookmark 
+nnoremap <leader>b :NERDTreeFromBookmark<space>
 
 " triple quotes
 inoremap ''' ''''''<Esc>2hi
@@ -249,6 +251,15 @@ inoremap """ """"""<Esc>2hi
 " keep visual selection after indent
 vnoremap > >gv
 vnoremap < <gv
+
+" ctrlp
+let g:ctrlp_custom_ignore = {"dir": "node_modules"}
+let g:ctrlp_custom_ignore = {"dir": "app\/build"}
+let g:ctrlp_custom_ignore = {"dir": "app\/package"}
+
+" syntastic
+" ignore angular directive attributes
+let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))
