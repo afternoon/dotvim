@@ -69,14 +69,14 @@ filetype plugin indent on
 
 " mac-user equivalent of a hair shirt
 " (just trying to get my hands on the home row)
-noremap <left> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
-noremap <up> <nop>
-inoremap <left> <nop>
-inoremap <down> <nop>
-inoremap <right> <nop>
-inoremap <up> <nop>
+" noremap <left> <nop>
+" noremap <down> <nop>
+" noremap <right> <nop>
+" noremap <up> <nop>
+" inoremap <left> <nop>
+" inoremap <down> <nop>
+" inoremap <right> <nop>
+" inoremap <up> <nop>
 
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
 set shell=bash

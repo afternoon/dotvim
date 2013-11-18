@@ -3,7 +3,6 @@ afternoon/dotvim
 
 - Uses Vundle
 - Is designed for MacVim (though other Vims should mostly work)
-- Disables the arrow keys!
 - Maps lots of stuff with <leader>
 - Has been evolving for a while and is probably crufty
 - Doesn't have great autocomplete (buffer only, nothing clever)
