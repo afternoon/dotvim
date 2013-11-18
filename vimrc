@@ -22,7 +22,7 @@ Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'mhinz/vim-startify'
 Bundle 'mileszs/ack.vim'
-Bundle 'msanders/snipmate.vim'
+Bundle 'garbas/vim-snipmate'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
 Bundle 'sukima/xmledit'
@@ -270,8 +270,11 @@ let g:ctrlp_custom_ignore={"dir": "app\/build"}
 let g:ctrlp_custom_ignore={"dir": "app\/package"}
 
 " syntastic
-" ignore angular directive attributes
-let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
+" ignore angular and angular-ui directive attributes
+let g:syntastic_html_tidy_ignore_errors=[
+            \ 'proprietary attribute "ng-',
+            \ 'proprietary attribute "ui-'
+            \]
 
 " airline
 set laststatus=2

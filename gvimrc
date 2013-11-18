@@ -114,9 +114,9 @@ endif
 "
 
 " Add a Preferences... menu item to the Edit menu.
-amenu Edit.-SepPrefs- :
-amenu Edit.Preferences.Command\ Line\.\.\. :tabedit ~/.vimrc<CR>
-amenu Edit.Preferences.GUI\.\.\. :tabedit ~/.gvimrc<CR>
+amenu File.Edit\ vimrc :tabedit ~/.vimrc<CR>
+amenu File.Edit\ gvimrc :tabedit ~/.gvimrc<CR>
+amenu File.-SepPrefs- :
 
 " add some shortcuts to menus
 amenu PopUp.-Sep- :
