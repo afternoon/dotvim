@@ -57,8 +57,8 @@ Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 
 " new and potentially deadly
+Bundle 'bling/vim-airline'
 "Bundle 'mhinz/vim-startify'
-"Bundle 'bling/vim-airline'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -260,6 +260,10 @@ let g:ctrlp_custom_ignore = {"dir": "app\/package"}
 " syntastic
 " ignore angular directive attributes
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
+
+" airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))

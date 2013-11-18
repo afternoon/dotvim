@@ -101,11 +101,11 @@ colorscheme molokai
 set guioptions=egmr " hide toolbar by default
 set linespace=1
 set showtabline=2
-set lines=80
-set columns=147
+set lines=75
+set columns=261
 
 if has("gui_macvim")
-    set guifont=Menlo:h13
+    set guifont=Meslo\ LG\ M\ for\ Powerline:h13
     set fuoptions=maxvert,maxhorz
 endif
 
