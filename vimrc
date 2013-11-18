@@ -64,6 +64,18 @@ Bundle 'vim-scripts/nginx.vim'
 " new and potentially deadly
 "Bundle 'Valloric/YouCompleteMe'
 
+" CamelCaseMotion - mappings must be defined before plugin startup
+map <silent> -w <Plug>CamelCaseMotion_w
+map <silent> -b <Plug>CamelCaseMotion_b
+map <silent> -e <Plug>CamelCaseMotion_e
+omap <silent> i-w <Plug>CamelCaseMotion_iw
+xmap <silent> i-w <Plug>CamelCaseMotion_iw
+omap <silent> i-b <Plug>CamelCaseMotion_ib
+xmap <silent> i-b <Plug>CamelCaseMotion_ib
+omap <silent> i-e <Plug>CamelCaseMotion_ie
+xmap <silent> i-e <Plug>CamelCaseMotion_ie
+Bundle 'bkad/CamelCaseMotion'
+
 " enable filetype magic
 filetype plugin indent on
 
