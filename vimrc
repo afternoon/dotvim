@@ -59,7 +59,7 @@ Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 
 " new and potentially deadly
-"Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'Valloric/YouCompleteMe'
@@ -265,6 +265,13 @@ let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline_theme="molokai"
+
+" indent guides
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+let g:indent_guides_color_change_percent=3
+let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))
