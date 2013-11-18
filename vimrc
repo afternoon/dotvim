@@ -17,26 +17,28 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " BUNDLES!!
+Bundle 'Phize/QFixToggle'
+Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
+Bundle 'mhinz/vim-startify'
 Bundle 'msanders/snipmate.vim'
-Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'sukima/xmledit'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'tyok/nerdtree-ack'
-Bundle 'Phize/QFixToggle'
 Bundle 'vim-scripts/netrw.vim'
 
+" NERDTree browser
+Bundle 'scrooloose/nerdtree'
+Bundle 'tyok/nerdtree-ack'
+
 " fuzzy finding
-"Bundle 'wincent/command-t'
 Bundle 'kien/ctrlp.vim'
 
 " autoclosing
-"Bundle 'vim-scripts/AutoClose'
 Bundle 'Raimondi/delimitMate'
 
 " colour schemes
@@ -57,8 +59,6 @@ Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 
 " new and potentially deadly
-Bundle 'bling/vim-airline'
-"Bundle 'mhinz/vim-startify'
 "Bundle 'nathanaelkane/vim-indent-guides'
 "Bundle 'tpope/vim-abolish'
 "Bundle 'terryma/vim-multiple-cursors'
@@ -229,7 +229,7 @@ if filereadable(expand("$HOME/.vim/mthesaur.txt"))
 endif
 
 " NERDTree
-let NERDTreeDirArrows=0
+let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
             \ '\(lib\|vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
             \ '\(build\|ebin\|target\)$[[dir]]',
@@ -253,17 +253,18 @@ vnoremap > >gv
 vnoremap < <gv
 
 " ctrlp
-let g:ctrlp_custom_ignore = {"dir": "node_modules"}
-let g:ctrlp_custom_ignore = {"dir": "app\/build"}
-let g:ctrlp_custom_ignore = {"dir": "app\/package"}
+let g:ctrlp_custom_ignore={"dir": "node_modules"}
+let g:ctrlp_custom_ignore={"dir": "app\/build"}
+let g:ctrlp_custom_ignore={"dir": "app\/package"}
 
 " syntastic
 " ignore angular directive attributes
-let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "ng-']
+let g:syntastic_html_tidy_ignore_errors=['proprietary attribute "ng-']
 
 " airline
 set laststatus=2
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts=1
+let g:airline_theme="molokai"
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))
