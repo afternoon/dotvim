@@ -68,7 +68,7 @@ Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 
 " new and potentially deadly
-"Bundle 'Valloric/YouCompleteMe'
+" Bundle 'Valloric/YouCompleteMe'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -95,6 +95,9 @@ filetype plugin indent on
 " inoremap <down> <nop>
 " inoremap <right> <nop>
 " inoremap <up> <nop>
+
+" default colorscheme for terminal
+colorscheme default
 
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
 set shell=bash
