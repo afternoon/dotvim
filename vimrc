@@ -66,6 +66,7 @@ Bundle 'vim-scripts/Puppet-Syntax-Highlighting'
 Bundle 'vim-scripts/httplog'
 Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
+Bundle 'hail2u/vim-css3-syntax'
 
 " new and potentially deadly
 " Bundle 'Valloric/YouCompleteMe'
@@ -169,9 +170,6 @@ endif
 set termencoding=utf-8
 set fileencoding=utf-8
 set encoding=utf-8
-
-" include dictionary files and tags in autocomplete scanning
-set complete =.,w,b,u,t,i,k,]
 
 " supertab
 let g:SuperTabDefaultCompletionType = "context"
@@ -281,8 +279,8 @@ let g:ctrlp_custom_ignore={"dir": "app\/package"}
 " syntastic
 " ignore angular and angular-ui directive attributes
 let g:syntastic_html_tidy_ignore_errors=[
-            \ 'proprietary attribute "ng-',
-            \ 'proprietary attribute "ui-'
+            \ 'proprietary attribute',
+            \ 'trimming empty <'
             \]
 
 " airline
