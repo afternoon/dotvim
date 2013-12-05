@@ -208,7 +208,7 @@ noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
 nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
 
 " move through quickfix list
-noremap <leader>f :QFix<CR>
+noremap <leader>x :QFix<CR>
 
 " window management
 nnoremap <leader>v <C-w>v<C-w>l
