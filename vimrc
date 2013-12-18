@@ -272,9 +272,12 @@ vnoremap > >gv
 vnoremap < <gv
 
 " ctrlp
-let g:ctrlp_custom_ignore={"dir": "node_modules"}
-let g:ctrlp_custom_ignore={"dir": "app\/build"}
-let g:ctrlp_custom_ignore={"dir": "app\/package"}
+set wildignore+=*/vendor/**
+set wildignore+=*/node_modules/**
+set wildignore+=*/bower_components/**
+set wildignore+=*/app/build/**
+set wildignore+=*/app/package/**
+set wildignore+=*/app/trigger_package/**
 
 " syntastic
 " ignore angular and angular-ui directive attributes
