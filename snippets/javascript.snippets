@@ -8,6 +8,26 @@ snippet con
 	console.log(${1});
 snippet parseInt
 	parseInt(${1}, 10)
+snippet desc
+	describe('${1}', function () {
+		it('${2}', function () {
+			// arrange
+			${3}
+
+			// act
+
+			// assert
+		});
+	});
+snippet it
+	it('${1}', function () {
+		// arrange
+		${2}
+
+		// act
+
+		// assert
+	});
 snippet aaa
 	// arrange
 	${0}
