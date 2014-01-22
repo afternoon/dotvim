@@ -1,3 +1,7 @@
+snippet f
+	function (${1}) {
+		${0}
+	}${2}
 snippet f!
 	function (${1}) {${2}};
 snippet :f!
@@ -18,6 +22,10 @@ snippet desc
 
 			// assert
 		});
+	});
+snippet before
+	beforeEach(function () {
+	  ${1}
 	});
 snippet it
 	it('${1}', function () {
