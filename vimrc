@@ -263,13 +263,15 @@ let NERDTreeShowBookmarks=1
 nnoremap <leader>n :NERDTreeToggle<CR>
 nnoremap <leader>b :NERDTreeFromBookmark<space>
 
-" triple quotes
-inoremap ''' ''''''<Esc>2hi
-inoremap """ """"""<Esc>2hi
-
 " keep visual selection after indent
 vnoremap > >gv
 vnoremap < <gv
+vnoremap <tab> >gv
+vnoremap <s-tab> <gv
+
+" type ' or " in visual mode to wrap selection
+vmap ' S'
+vmap " S"
 
 " ctrlp
 set wildignore+=*/vendor/**
