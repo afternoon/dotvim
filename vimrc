@@ -18,6 +18,7 @@ Bundle 'gmarik/vundle'
 
 " BUNDLES!!
 Bundle 'Phize/QFixToggle'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'bling/vim-airline'
 Bundle 'ervandew/supertab'
 Bundle 'mileszs/ack.vim'
