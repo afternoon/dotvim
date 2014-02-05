@@ -269,10 +269,6 @@ vnoremap < <gv
 vnoremap <tab> >gv
 vnoremap <s-tab> <gv
 
-" type ' or " in visual mode to wrap selection
-vmap ' S'
-vmap " S"
-
 " ctrlp
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
@@ -299,6 +295,14 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_color_change_percent=3
 let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
+
+" define :Gsync command to update and push
+function Gsync()
+    Git up
+    Git push
+endfunction
+command Gsync :call Gsync()
+command Gst :Gstatus
 
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))
