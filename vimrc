@@ -86,17 +86,6 @@ Bundle 'bkad/CamelCaseMotion'
 " enable filetype magic
 filetype plugin indent on
 
-" mac-user equivalent of a hair shirt
-" (just trying to get my hands on the home row)
-" noremap <left> <nop>
-" noremap <down> <nop>
-" noremap <right> <nop>
-" noremap <up> <nop>
-" inoremap <left> <nop>
-" inoremap <down> <nop>
-" inoremap <right> <nop>
-" inoremap <up> <nop>
-
 " default colorscheme for terminal
 colorscheme default
 
@@ -266,8 +255,10 @@ nnoremap <leader>b :NERDTreeFromBookmark<space>
 " keep visual selection after indent
 vnoremap > >gv
 vnoremap < <gv
-vnoremap <tab> >gv
-vnoremap <s-tab> <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
 
 " ctrlp
 set wildignore+=*/vendor/**

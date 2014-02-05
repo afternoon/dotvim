@@ -151,16 +151,6 @@ if has("gui_macvim")
     map <silent> <D-H> :nohl<CR>
     imap <silent> <D-H> <Esc>:nohl<CR>a
 
-    " quickfix window and movement
-    map <silent> <S-D-Up> :cprev<CR>
-    map <silent> <S-D-Down> :cnext<CR>
-    imap <silent> <S-D-Up> <Esc>:cprev<CR>
-    imap <silent> <S-D-Down> <Esc>:cnext<CR>
-    map <silent> <D-e> :cwindow<CR>
-    imap <silent> <D-e> <Esc>:cwindow<CR>
-    map <silent> <D-E> :cclose<CR>
-    imap <silent> <D-E> <Esc>:cclose<CR>
-
     " tab movement
     map <silent> <S-D-Left> :tabprevious<CR>
     map <silent> <S-D-Right> :tabnext<CR>
@@ -181,6 +171,11 @@ if has("gui_macvim")
 
     " Fullscreen
     map <silent> <D-F> :set invfullscreen<CR>
+
+    " move lines up and down and reindent correctly (clashes with quickfix in
+    " default runtime/menu.vim - patch it!)
+    vnoremap <D-C-Up> :m '<-2<CR>gv=gv
+    vnoremap <D-C-Down> :m '>+1<CR>gv=gv
 endif
 
 " Update ctags
