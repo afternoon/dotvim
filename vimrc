@@ -48,7 +48,7 @@ Bundle 'tyok/nerdtree-ack'
 Bundle 'kien/ctrlp.vim'
 
 " autoclosing
-Bundle 'Raimondi/delimitMate'
+Bundle 'jiangmiao/auto-pairs'
 
 " colour schemes
 Bundle 'afternoon/molokai'
