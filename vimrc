@@ -295,6 +295,12 @@ endfunction
 command Gsync :call Gsync()
 command Gst :Gstatus
 
+" source the vimrc and gvimrc files after saving
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+  autocmd bufwritepost .gvimrc source $MYGVIMRC
+endif
+
 " Local machine settings
 if filereadable(expand("$HOME/.vimrc.local"))
     source $HOME/.vimrc.local
