@@ -172,10 +172,14 @@ if has("gui_macvim")
     " Fullscreen
     map <silent> <D-F> :set invfullscreen<CR>
 
-    " move lines up and down and reindent correctly (clashes with quickfix in
-    " default runtime/menu.vim - patch it!)
-    vnoremap <D-C-Up> :m '<-2<CR>gv=gv
-    vnoremap <D-C-Down> :m '>+1<CR>gv=gv
+    " move lines up and down and reindent correctly (clashes with quickfix menu
+    " mappings in runtime/menu.vim, so we remove those mappings first)
+    macm Tools.Older\ List key=<nop>
+    macm Tools.Newer\ List key=<nop>
+    nnoremap <D-C-Up> V:move '<-2<CR>gv=
+    nnoremap <D-C-Down> V:move '>+1<CR>gv=
+    vnoremap <D-C-Up> :move '<-2<CR>gv=gv
+    vnoremap <D-C-Down> :move '>+1<CR>gv=gv
 endif
 
 " Update ctags
