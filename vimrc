@@ -53,7 +53,7 @@ Bundle 'jiangmiao/auto-pairs'
 " colour schemes
 Bundle 'afternoon/molokai'
 
-" syntax highlighting bundles
+" language bundles
 Bundle 'afternoon/ini-syntax-definition'
 Bundle 'bronson/vim-trailing-whitespace'
 Bundle 'cakebaker/scss-syntax.vim'
@@ -67,9 +67,7 @@ Bundle 'vim-scripts/httplog'
 Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'hail2u/vim-css3-syntax'
-
-" new and potentially deadly
-" Bundle 'Valloric/YouCompleteMe'
+Bundle 'leafgarland/typescript-vim'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -87,7 +85,9 @@ Bundle 'bkad/CamelCaseMotion'
 filetype plugin indent on
 
 " default colorscheme for terminal
-colorscheme default
+if !has("gui_macvim")
+    colorscheme default
+endif
 
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
 set shell=bash
@@ -194,7 +194,9 @@ noremap <leader>a :Ack<Space>
 noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
 
 " Don't bind ,ac to AutoClose (makes response to ,a faster)
-nnoremap <unique> <Leader>toggleautoclose <Plug>ToggleAutoCloseMappings
+if maparg("<leader>toggleautoclose", "n") == ""
+    nnoremap <unique> <leader>toggleautoclose <Plug>ToggleAutoCloseMappings
+endif
 
 " move through quickfix list
 noremap <leader>x :QFix<CR>
@@ -288,17 +290,19 @@ let g:indent_guides_color_change_percent=3
 let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
 
 " define :Gsync command to update and push
-function Gsync()
-    Git up
-    Git push
-endfunction
-command Gsync :call Gsync()
-command Gst :Gstatus
+if !exists("*Gsync")
+    function Gsync()
+        Git up
+        Git push
+    endfunction
+    command Gsync :call Gsync()
+    command Gst :Gstatus
+endif
 
 " source the vimrc and gvimrc files after saving
 if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-  autocmd bufwritepost .gvimrc source $MYGVIMRC
+    autocmd bufwritepost .vimrc source $MYVIMRC
+    autocmd bufwritepost .gvimrc source $MYGVIMRC
 endif
 
 " Local machine settings
