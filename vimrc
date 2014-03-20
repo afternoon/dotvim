@@ -241,7 +241,7 @@ endif
 " NERDTree
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
-            \ '\(lib\|vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
+            \ '\(vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
             \ '\(build\|ebin\|target\)$[[dir]]',
             \ '\.py[co]$[[file]]',
             \ '\~$[[file]]',
