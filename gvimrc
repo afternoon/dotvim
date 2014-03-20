@@ -100,7 +100,7 @@ colorscheme molokai
 
 set guioptions=egmr " hide toolbar by default
 set linespace=1
-set showtabline=2
+" set showtabline=2
 set lines=75
 set columns=261
 
