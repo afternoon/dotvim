@@ -96,18 +96,13 @@ unlet s:cpo_save
 " Local settings for Ben Godfrey
 "
 
-colorscheme molokai
-
 set guioptions=egmr " hide toolbar by default
 set linespace=1
-" set showtabline=2
-set lines=75
-set columns=261
+set lines=76
+set columns=235
 
-if has("gui_macvim")
-    set guifont=Meslo\ LG\ M\ for\ Powerline:h13
-    set fuoptions=maxvert,maxhorz
-endif
+set guifont=Meslo\ LG\ M\ for\ Powerline:h13
+set fuoptions=maxvert,maxhorz
 
 "
 " Custom menus

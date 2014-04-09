@@ -84,10 +84,8 @@ Bundle 'bkad/CamelCaseMotion'
 " enable filetype magic
 filetype plugin indent on
 
-" default colorscheme for terminal
-if !has("gui_macvim")
-    colorscheme default
-endif
+" default colorscheme
+colorscheme molokai
 
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
 set shell=bash
@@ -268,7 +266,7 @@ set wildignore+=*/node_modules/**
 set wildignore+=*/bower_components/**
 set wildignore+=*/app/build/**
 set wildignore+=*/app/package/**
-set wildignore+=*/app/trigger_package/**
+set wildignore+=*/app/*_package/**
 
 " syntastic
 " ignore angular and angular-ui directive attributes
