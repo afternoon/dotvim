@@ -85,6 +85,7 @@ Bundle 'bkad/CamelCaseMotion'
 filetype plugin indent on
 
 " default colorscheme
+set background=dark
 colorscheme molokai
 
 " use bash as shell for now, seems a bit more reliable, esp. with fugitive
@@ -286,6 +287,12 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_color_change_percent=3
 let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
+
+if !has("gui_macvim")
+    let g:indent_guides_auto_colors = 0
+    hi IndentGuidesOdd  guifg=#A6E22E guibg=#232526 ctermfg=118 ctermbg=235
+    hi IndentGuidesEven guifg=#A6E22E guibg=#232526 ctermfg=118 ctermbg=235
+endif
 
 " define :Gsync command to update and push
 if !exists("*Gsync")
