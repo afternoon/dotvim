@@ -266,6 +266,8 @@ nnoremap <S-Tab> <<
 unmap <c-i>
 
 " ctrlp
+let g:ctrlp_open_new_file = "v"
+let g:ctrlp_open_multiple_files = "v"
 set wildignore+=*/vendor/**
 set wildignore+=*/node_modules/**
 set wildignore+=*/bower_components/**
