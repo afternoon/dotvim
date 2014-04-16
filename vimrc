@@ -256,10 +256,14 @@ nnoremap <leader>b :NERDTreeFromBookmark<space>
 " keep visual selection after indent
 vnoremap > >gv
 vnoremap < <gv
+
+" indent with tab in normal and visual modes
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
+" don't map <c-i>, it's need to move forward in jump list
+unmap <c-i>
 
 " ctrlp
 set wildignore+=*/vendor/**
