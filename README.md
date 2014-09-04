@@ -15,6 +15,6 @@ Install
     git clone git@github.com:afternoon/dotvim ~/.vim (or vimfiles)
     mkdir -p ~/.vim/bundle
     git clone git@github.com:gmarik/vundle ~/.vim/bundle/vundle
-    ln -s ~/.vim/vimrc .vimrc
-    ln -s ~/.vim/gvimrc .gvimrc
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
     vim +BundleInstall +qall
