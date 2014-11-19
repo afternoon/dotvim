@@ -33,6 +33,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/netrw.vim'
+Bundle 'majutsushi/tagbar'
 
 " garbas' snipmate
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -67,6 +68,7 @@ Bundle 'vim-scripts/httplog'
 Bundle 'vim-scripts/n3.vim'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'leafgarland/typescript-vim'
+Bundle 'PProvost/vim-ps1'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -189,7 +191,7 @@ set omnifunc=syntaxcomplete#Complete
 
 " ack mappings, ,A to search, ,k to search for word under cursor
 noremap <leader>a :Ack<Space>
-noremap <leader>A viw"zy:exe "Ack '" . @z . "'"<CR>
+noremap <Leader>k :Ack <cword><CR>
 
 " Don't bind ,ac to AutoClose (makes response to ,a faster)
 if maparg("<leader>toggleautoclose", "n") == ""
@@ -239,7 +241,7 @@ endif
 " NERDTree
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
-            \ '\(vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
+            \ '\(vendor\|node_modules\|bower_components\|deps\|build\|package\|tmp\|coverage\)$[[dir]]',
             \ '\(build\|ebin\|target\|__pycache__\)$[[dir]]',
             \ '\.py[co]$[[file]]',
             \ '\~$[[file]]',
@@ -260,12 +262,15 @@ vnoremap < <gv
 " ctrlp
 let g:ctrlp_open_new_file = "v"
 let g:ctrlp_open_multiple_files = "v"
-set wildignore+=*/vendor/**
-set wildignore+=*/node_modules/**
-set wildignore+=*/bower_components/**
-set wildignore+=*/app/build/**
-set wildignore+=*/app/package/**
-set wildignore+=*/app/*_package/**
+" set wildignore+=*/vendor/**
+" set wildignore+=*/node_modules/**
+" set wildignore+=*/bower_components/**
+" set wildignore+=*/app/build/**
+" set wildignore+=*/app/package/**
+" set wildignore+=*/app/cordova/tmp/**
+let g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|bower_components|app/(build|package|cordova/tmp))$',
+  \ }
 
 " syntastic
 " ignore angular and angular-ui directive attributes
@@ -273,6 +278,10 @@ let g:syntastic_html_tidy_ignore_errors=[
             \ 'proprietary attribute',
             \ 'trimming empty <'
             \]
+" colour lines with errors and warnings
+let g:syntastic_enable_signs=1
+highlight SyntasticErrorLine guibg=#550000
+highlight SyntasticWarningLine guibg=#331d1e
 
 " airline
 set laststatus=2
@@ -285,6 +294,9 @@ let g:indent_guides_start_level=2
 let g:indent_guides_guide_size=1
 let g:indent_guides_color_change_percent=3
 let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
+
+" tagbar
+nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 if !has("gui_macvim")
     let g:indent_guides_auto_colors = 0
