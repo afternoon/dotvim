@@ -240,7 +240,7 @@ endif
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
             \ '\(vendor\|node_modules\|bower_components\|deps\|package\|trigger_package\)$[[dir]]',
-            \ '\(build\|ebin\|target\)$[[dir]]',
+            \ '\(build\|ebin\|target\|__pycache__\)$[[dir]]',
             \ '\.py[co]$[[file]]',
             \ '\~$[[file]]',
             \ '\.\(class\|beam\|o\)$[[file]]',
@@ -250,6 +250,7 @@ let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
 nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>m :NERDTreeFind<CR>
 nnoremap <leader>b :NERDTreeFromBookmark<space>
 
 " keep visual selection after indent
