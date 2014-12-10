@@ -43,7 +43,7 @@ Bundle 'honza/vim-snippets'
 
 " NERDTree browser
 Bundle 'scrooloose/nerdtree'
-Bundle 'tyok/nerdtree-ack'
+Bundle 'taiansu/nerdtree-ag'
 
 " fuzzy finding
 Bundle 'kien/ctrlp.vim'
@@ -186,8 +186,8 @@ set completeopt=menu
 set omnifunc=syntaxcomplete#Complete
 
 " ack mappings, ,A to search, ,k to search for word under cursor
-noremap <leader>a :Ack<Space>
-noremap <Leader>k :Ack <cword><CR>
+noremap <leader>a :Ag<Space>
+noremap <Leader>k :Ag <cword><CR>
 
 " Don't bind ,ac to AutoClose (makes response to ,a faster)
 if maparg("<leader>toggleautoclose", "n") == ""
