@@ -9,16 +9,14 @@ set nocompatible
 " required for vundle
 filetype off
 
-" setup var with path to vim home dir - edit this if yours is somewhere else
-if has('win32') || has('win64')
-    let $VIMHOME="~/vimfiles"
-else
-    let $VIMHOME="~/.vim"
-endif
-
 " init vundle
-set runtimepath+=$VIMHOME/bundle/Vundle.vim/
-execute 'call vundle#begin("' . $VIMHOME . '/bundle")'
+if has('win32') || has('win64')
+  set rtp+=~/vimfiles/bundle/Vundle.vim/
+  call vundle#begin('$HOME/vimfiles/bundle')
+else
+  set rtp+=~/.vim/bundle/Vundle.vim/
+  call vundle#begin()
+endif
 
 " add vundle as a bundle for updating/to prevent cleaning
 Bundle 'gmarik/Vundle.vim'
