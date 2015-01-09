@@ -101,7 +101,7 @@ set linespace=1
 set lines=76
 set columns=235
 
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13,Consolas:h12,Monaco:h15,Inconsolata:h12
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13,Consolas:h11,Monaco:h15,Inconsolata:h12
 
 set fuoptions=maxvert,maxhorz
 
