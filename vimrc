@@ -9,8 +9,15 @@ set nocompatible
 " required for vundle
 filetype off
 
+" var for path to vim home dir - doesn't seem possible to detect this
+if has('win32') || has ('win64')
+    let $VIMHOME="~/vimfiles"
+else
+    let $VIMHOME="~/.vim"
+endif
+
 " init vundle
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=$VIMHOME/bundle/vundle/
 call vundle#rc()
 
 " add vundle as a bundle for updating/to prevent cleaning
@@ -65,6 +72,7 @@ Bundle 'vim-scripts/httplog'
 Bundle 'vim-scripts/nginx.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'PProvost/vim-ps1'
+Bundle 'derekwyatt/vim-scala'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -230,8 +238,8 @@ nnoremap <F5> :make<CR>
 cnoremap <leader>W %!sudo tee > /dev/null %
 
 " thesaurus
-if filereadable(expand("$HOME/.vim/mthesaur.txt"))
-    set thesaurus=$HOME/.vim/mthesaur.txt
+if filereadable(expand("$VIMHOME/mthesaur.txt"))
+    set thesaurus=$VIMHOME/mthesaur.txt
 endif
 
 " NERDTree
@@ -314,9 +322,4 @@ endif
 if has("autocmd")
     autocmd bufwritepost .vimrc source $MYVIMRC
     autocmd bufwritepost .gvimrc source $MYGVIMRC
-endif
-
-" Local machine settings
-if filereadable(expand("$HOME/.vimrc.local"))
-    source $HOME/.vimrc.local
 endif
