@@ -9,19 +9,19 @@ set nocompatible
 " required for vundle
 filetype off
 
-" var for path to vim home dir - doesn't seem possible to detect this
-if has('win32') || has ('win64')
+" setup var with path to vim home dir - edit this if yours is somewhere else
+if has('win32') || has('win64')
     let $VIMHOME="~/vimfiles"
 else
     let $VIMHOME="~/.vim"
 endif
 
 " init vundle
-set rtp+=$VIMHOME/bundle/vundle/
-call vundle#rc()
+set runtimepath+=$VIMHOME/bundle/Vundle.vim/
+execute 'call vundle#begin("' . $VIMHOME . '/bundle")'
 
 " add vundle as a bundle for updating/to prevent cleaning
-Bundle 'gmarik/vundle'
+Bundle 'gmarik/Vundle.vim'
 
 " BUNDLES!!
 Bundle 'Phize/QFixToggle'
@@ -85,6 +85,9 @@ xmap <silent> i-b <Plug>CamelCaseMotion_ib
 omap <silent> i-e <Plug>CamelCaseMotion_ie
 xmap <silent> i-e <Plug>CamelCaseMotion_ie
 Bundle 'bkad/CamelCaseMotion'
+
+" vundle plugins all defined
+call vundle#end()
 
 " enable filetype magic
 filetype plugin indent on
