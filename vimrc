@@ -12,7 +12,7 @@ filetype off
 " init vundle
 if has('win32') || has('win64')
   set rtp+=~/vimfiles/bundle/Vundle.vim/
-  call vundle#begin('$HOME/vimfiles/bundle')
+  call vundle#begin('~/vimfiles/bundle')
 else
   set rtp+=~/.vim/bundle/Vundle.vim/
   call vundle#begin()
@@ -290,7 +290,9 @@ highlight SyntasticWarningLine guibg=#331d1e
 
 " airline
 set laststatus=2
-let g:airline_powerline_fonts=1
+if has("mac")
+    let g:airline_powerline_fonts=1
+endif
 let g:airline_theme="molokai"
 
 " indent guides
@@ -302,12 +304,6 @@ let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
 
 " tagbar
 nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-if !has("gui_macvim")
-    let g:indent_guides_auto_colors = 0
-    hi IndentGuidesOdd  guifg=#27292A guibg=#212324 ctermbg=235
-    hi IndentGuidesEven guifg=#212324 guibg=#27292A ctermbg=236
-endif
 
 " define :Gsync command to update and push
 if !exists("*Gsync")

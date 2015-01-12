@@ -96,14 +96,23 @@ unlet s:cpo_save
 " Local settings for Ben Godfrey
 "
 
-set guioptions=egmr " hide toolbar by default
+" fullscreen on startup
+if has("gui_macvim")
+    set fuoptions=maxvert,maxhorz
+    set fullscreen
+elseif has("win32") || has("win64")
+    au GUIEnter * simalt ~x
+endif
+
+set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13,Consolas_for_Powerline_FixedD:h11:cANSI,Consolas:h11,Monaco:h15
+
+" hide toolbar by default
+set guioptions=egmr
+
+" set window size - this is a bit arbitrary, sorry!
 set linespace=1
 set lines=76
 set columns=235
-
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13,Consolas:h11,Monaco:h15,Inconsolata:h12
-
-set fuoptions=maxvert,maxhorz
 
 "
 " Custom menus
@@ -180,6 +189,11 @@ endif
 
 " Update ctags
 map <silent> <F3> :!ctags -R --exclude=.svn --exclude=.git --exclude=log *<CR>
+
+" nicer indent guide colours in the GUI
+let g:indent_guides_auto_colors = 0
+hi IndentGuidesOdd  guifg=#27292A guibg=#212324 ctermbg=235
+hi IndentGuidesEven guifg=#212324 guibg=#27292A ctermbg=236
 
 "
 " Local machine settings
