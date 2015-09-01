@@ -12,9 +12,11 @@ See top of `vimrc` for the bundle list.
 Install
 -------
 
-    git clone https://github.com/afternoon/dotvim ~/.vim (or ~/vimfiles for Windows)
-    mkdir -p ~/.vim/bundle
-    git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-    ln -s ~/.vim/vimrc ~/.vimrc
-    ln -s ~/.vim/gvimrc ~/.gvimrc
-    vim +BundleInstall +qall
+```bash
+git clone https://github.com/afternoon/dotvim ~/.vim # or ~/vimfiles for Windows
+mkdir -p ~/.vim/bundle
+git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+vim +BundleInstall +qall
+```
