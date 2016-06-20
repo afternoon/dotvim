@@ -104,7 +104,7 @@ elseif has("win32") || has("win64")
     au GUIEnter * simalt ~x
 endif
 
-set guifont=Meslo\ LG\ M\ DZ\ for\ Powerline:h13,Consolas_for_Powerline_FixedD:h11:cANSI,Consolas:h11,Monaco:h15
+set guifont=Inconsolata\ for\ Powerline:h16,Meslo\ LG\ M\ DZ\ for\ Powerline:h14,Consolas_for_Powerline_FixedD:h11:cANSI,Consolas:h11,Monaco:h15
 
 " hide toolbar by default
 set guioptions=egmr

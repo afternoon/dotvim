@@ -71,6 +71,8 @@ Bundle 'vim-scripts/nginx.vim'
 Bundle 'leafgarland/typescript-vim'
 Bundle 'PProvost/vim-ps1'
 Bundle 'derekwyatt/vim-scala'
+Bundle 'othree/yajs.vim'
+Bundle 'fatih/vim-go'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -290,10 +292,7 @@ highlight SyntasticWarningLine guibg=#331d1e
 
 " airline
 set laststatus=2
-if has("mac")
-    let g:airline_powerline_fonts=1
-endif
-let g:airline_theme="molokai"
+let g:airline_powerline_fonts=1
 
 " indent guides
 let g:indent_guides_enable_on_vim_startup=1
