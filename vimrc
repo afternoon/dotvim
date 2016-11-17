@@ -59,6 +59,9 @@ Bundle 'jiangmiao/auto-pairs'
 " colour schemes
 Bundle 'afternoon/molokai'
 
+" DB access
+Bundle 'vim-scripts/dbext.vim'
+
 " language bundles
 Bundle 'afternoon/ini-syntax-definition'
 Bundle 'bronson/vim-trailing-whitespace'
@@ -68,12 +71,13 @@ Bundle 'skammer/vim-css-color'
 Bundle 'tpope/vim-markdown'
 Bundle 'vim-scripts/httplog'
 Bundle 'vim-scripts/nginx.vim'
-Bundle 'leafgarland/typescript-vim'
-Bundle 'PProvost/vim-ps1'
 Bundle 'derekwyatt/vim-scala'
-Bundle 'othree/yajs.vim'
 Bundle 'fatih/vim-go'
 Bundle 'guns/vim-clojure-static'
+Bundle 'pangloss/vim-javascript'
+Bundle 'mxw/vim-jsx'
+Bundle 'ternjs/tern_for_vim'
+Bundle 'mpyatishev/vim-sqlformat'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -246,6 +250,9 @@ if filereadable(expand("$VIMHOME/mthesaur.txt"))
     set thesaurus=$VIMHOME/mthesaur.txt
 endif
 
+" ignore
+set wildignore+=*.so,*.swp,*.py[co]
+
 " NERDTree
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
@@ -270,22 +277,10 @@ vnoremap < <gv
 " ctrlp
 let g:ctrlp_open_new_file = "v"
 let g:ctrlp_open_multiple_files = "v"
-" set wildignore+=*/vendor/**
-" set wildignore+=*/node_modules/**
-" set wildignore+=*/bower_components/**
-" set wildignore+=*/app/build/**
-" set wildignore+=*/app/package/**
-" set wildignore+=*/app/cordova/tmp/**
 let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|bower_components|app/(build|package|cordova/tmp))$',
+  \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|bower_components)$',
   \ }
 
-" syntastic
-" ignore angular and angular-ui directive attributes
-let g:syntastic_html_tidy_ignore_errors=[
-            \ 'proprietary attribute',
-            \ 'trimming empty <'
-            \]
 " colour lines with errors and warnings
 let g:syntastic_enable_signs=1
 highlight SyntasticErrorLine guibg=#550000
@@ -320,6 +315,14 @@ set pastetoggle=<F2>
 
 " format JSON
 nnoremap <silent> <Leader>jf :%!python -m json.tool<CR>
+
+" Apply vim-jsx to .js files
+let g:jsx_ext_required = 0
+
+" dbext
+let g:dbext_default_window_width = 80
+let g:dbext_default_profile_millau = 'type=MYSQL:dbname=millau'
+let g:dbext_default_profile = 'millau'
 
 " source the vimrc and gvimrc files after saving
 if has("autocmd")
