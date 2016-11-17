@@ -73,6 +73,7 @@ Bundle 'PProvost/vim-ps1'
 Bundle 'derekwyatt/vim-scala'
 Bundle 'othree/yajs.vim'
 Bundle 'fatih/vim-go'
+Bundle 'guns/vim-clojure-static'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -313,6 +314,12 @@ if !exists("*Gsync")
     command Gsync :call Gsync()
     command Gst :Gstatus
 endif
+
+" paste toggle shortcut
+set pastetoggle=<F2>
+
+" format JSON
+nnoremap <silent> <Leader>jf :%!python -m json.tool<CR>
 
 " source the vimrc and gvimrc files after saving
 if has("autocmd")
