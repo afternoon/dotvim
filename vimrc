@@ -78,6 +78,9 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'mxw/vim-jsx'
 Bundle 'ternjs/tern_for_vim'
 Bundle 'mpyatishev/vim-sqlformat'
+Bundle 'rust-lang/rust.vim'
+Bundle 'cespare/vim-toml'
+Bundle 'hhvm/vim-hack'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -283,6 +286,8 @@ let g:ctrlp_custom_ignore = {
 
 " colour lines with errors and warnings
 let g:syntastic_enable_signs=1
+let g:syntastic_python_python_exec='python3'
+let g:syntastic_python_flake8_exec='python3'
 highlight SyntasticErrorLine guibg=#550000
 highlight SyntasticWarningLine guibg=#331d1e
 
