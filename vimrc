@@ -19,68 +19,71 @@ else
 endif
 
 " add vundle as a bundle for updating/to prevent cleaning
-Bundle 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
-" BUNDLES!!
-Bundle 'Phize/QFixToggle'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'bling/vim-airline'
-Bundle 'ervandew/supertab'
-Bundle 'rking/ag.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
-Bundle 'sukima/xmledit'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/netrw.vim'
-Bundle 'majutsushi/tagbar'
+" autocompletion powerhouse
+Plugin 'Valloric/YouCompleteMe'
 
-" garbas' snipmate
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
+" tab autocomplete
+Plugin 'ervandew/supertab'
 
-" NERDTree browser
-Bundle 'scrooloose/nerdtree'
-Bundle 'taiansu/nerdtree-ag'
+" tpope has a posse
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+
+" BLING RULER PRO
+Plugin 'vim-airline/vim-airline'
+
+" syntax checking
+Plugin 'vim-syntastic/syntastic'
 
 " fuzzy finding
-Bundle 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 " autoclosing
-Bundle 'jiangmiao/auto-pairs'
+Plugin 'jiangmiao/auto-pairs'
+
+" sublime-style multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+" toggle quickfix window open/closed
+Plugin 'Phize/QFixToggle'
 
 " colour schemes
-Bundle 'afternoon/molokai'
+Plugin 'afternoon/molokai'
 
-" DB access
-Bundle 'vim-scripts/dbext.vim'
+" highlight trailing whitespace
+Plugin 'bronson/vim-trailing-whitespace'
+
+" match start/end pairs with with handy indent bars
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " language bundles
-Bundle 'afternoon/ini-syntax-definition'
-Bundle 'bronson/vim-trailing-whitespace'
-Bundle 'elzr/vim-json'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'skammer/vim-css-color'
-Bundle 'tpope/vim-markdown'
-Bundle 'vim-scripts/httplog'
-Bundle 'vim-scripts/nginx.vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'fatih/vim-go'
-Bundle 'guns/vim-clojure-static'
-Bundle 'pangloss/vim-javascript'
-Bundle 'mxw/vim-jsx'
-Bundle 'ternjs/tern_for_vim'
-Bundle 'mpyatishev/vim-sqlformat'
-Bundle 'rust-lang/rust.vim'
-Bundle 'cespare/vim-toml'
-Bundle 'hhvm/vim-hack'
+Plugin 'tpope/vim-markdown'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+
+" garbas' snipmate
+"Plugin 'MarcWeber/vim-addon-mw-utils'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
+
+" NERDTree browser
+"Plugin 'scrooloose/nerdtree'
+"Plugin 'taiansu/nerdtree-ag'
+
+" others
+"Plugin 'tpope/vim-fugitive'
+"Plugin 'airblade/vim-gitgutter'
+"Plugin 'rking/ag.vim'
+"Plugin 'sukima/xmledit'
+"Plugin 'vim-scripts/netrw.vim'
+"Plugin 'majutsushi/tagbar'
 
 " CamelCaseMotion - mappings must be defined before plugin startup
 map <silent> -w <Plug>CamelCaseMotion_w
@@ -92,7 +95,7 @@ omap <silent> i-b <Plug>CamelCaseMotion_ib
 xmap <silent> i-b <Plug>CamelCaseMotion_ib
 omap <silent> i-e <Plug>CamelCaseMotion_ie
 xmap <silent> i-e <Plug>CamelCaseMotion_ie
-Bundle 'bkad/CamelCaseMotion'
+Plugin 'bkad/CamelCaseMotion'
 
 " vundle plugins all defined
 call vundle#end()
@@ -100,25 +103,29 @@ call vundle#end()
 " enable filetype magic
 filetype plugin indent on
 
+" turn on syntax highlighting
+syntax on
+
+" FB Vim config
+if filereadable($LOCAL_ADMIN_SCRIPTS . "/master.vimrc")
+  source $LOCAL_ADMIN_SCRIPTS/master.vimrc
+  source $LOCAL_ADMIN_SCRIPTS/vim/biggrep.vim
+  source $LOCAL_ADMIN_SCRIPTS/vim/filetype.vim
+  source $LOCAL_ADMIN_SCRIPTS/vim/fbvim.vim
+endif
+
 " default colorscheme
 set background=dark
 colorscheme molokai
 
-" use bash as shell for now, seems a bit more reliable, esp. with fugitive
-set shell=bash
-
-" turn on syntax highlighting
-syntax on
-
 " remap leader
-let mapleader = ","
+let mapleader=","
+
+" mouse magic
+set mouse=a
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
-
-" show command mode autocomplete matches
-set wildmenu
-set wildmode=longest,full
 
 " show current position
 set ruler
@@ -131,7 +138,7 @@ set gdefault " global substitute by default
 set showmatch
 
 " command editing
-set showcmd		    " display incomplete commands
+set showcmd	" display incomplete commands
 set cmdwinheight=20 " big window for command history (q:, q/, q?)
 
 " disable line wrapping by default
@@ -140,13 +147,18 @@ set nowrap
 " enable line numbers
 set number
 
+" read file if changed outside vim
+set autoread
+
 " backup and autosave
 set backupcopy=yes
 set autowrite
 set autowriteall
 
-" check for mac newlines
-set ffs+=mac
+" show command mode autocomplete matches
+set wildmenu
+set wildmode=longest,full
+set wildignore+=*.so,*.swp,*.py[co]
 
 " tabs, hard line wrapping, indentation
 set expandtab
@@ -156,9 +168,7 @@ set softtabstop=4
 set autoindent
 set formatoptions=tcoqn
 set nojoinspaces
-
-" don't redraw screen while running macros (increase speed)
-set lazyredraw
+set smarttab
 
 " line numbers
 set number
@@ -166,9 +176,13 @@ set number
 " line length fascism
 set textwidth=80
 if exists("&colorcolumn")
-    set colorcolumn=+1
-    hi ColorColumn ctermbg=black ctermfg=red
+  set colorcolumn=+1
+  hi ColorColumn ctermbg=black ctermfg=red
 endif
+
+" tab fascism
+syn match tab display "\t"
+hi link tab Error
 
 " encoding settings
 set termencoding=utf-8
@@ -176,21 +190,11 @@ set fileencoding=utf-8
 set encoding=utf-8
 
 " supertab
-let g:SuperTabDefaultCompletionType = "context"
-
-" HTML generation
-let html_use_css="yay"
+"let g:SuperTabDefaultCompletionType="context"
 
 " allow windows to be different sizes - required for Project/NERDTree plugins
 " to stay sane
 set noequalalways
-
-" Snippets plugin
-let g:snip_start_tag = "@"
-let g:snip_end_tag = "@"
-
-" read first 10 lines for modelines
-set modelines=10
 
 " show search results in the centre of the window
 nnoremap n nzz
@@ -201,19 +205,19 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 
 " omni!
-set completeopt=menu
-set omnifunc=syntaxcomplete#Complete
+"set completeopt=menu
+"set omnifunc=syntaxcomplete#Complete
 
 " ack mappings, ,A to search, ,k to search for word under cursor
-noremap <leader>a :Ag<Space>
-noremap <Leader>k :Ag <cword><CR>
+"noremap <leader>a :Ag<Space>
+"noremap <Leader>k :Ag <cword><CR>
 
 " Don't bind ,ac to AutoClose (makes response to ,a faster)
-if maparg("<leader>toggleautoclose", "n") == ""
-    nnoremap <unique> <leader>toggleautoclose <Plug>ToggleAutoCloseMappings
-endif
+"if maparg("<leader>toggleautoclose", "n") == ""
+"    nnoremap <unique> <leader>toggleautoclose <Plug>ToggleAutoCloseMappings
+"endif
 
-" move through quickfix list
+" toggle quickfix list
 noremap <leader>x :QFix<CR>
 
 " window management
@@ -242,30 +246,19 @@ nnoremap <leader>fw :FixWhitespace<CR>
 " hide search highlighting
 nnoremap <leader>l :nohl<CR>
 
-" bind make to F5, like those other IDEs we don't name
-nnoremap <F5> :make<CR>
-
 " sudo make me a sandwich
 cnoremap <leader>W %!sudo tee > /dev/null %
-
-" thesaurus
-if filereadable(expand("$VIMHOME/mthesaur.txt"))
-    set thesaurus=$VIMHOME/mthesaur.txt
-endif
-
-" ignore
-set wildignore+=*.so,*.swp,*.py[co]
 
 " NERDTree
 let NERDTreeDirArrows=1
 let NERDTreeIgnore=[
-            \ '\(vendor\|node_modules\|bower_components\|deps\|build\|package\|tmp\|coverage\)$[[dir]]',
-            \ '\(build\|ebin\|target\|__pycache__\)$[[dir]]',
-            \ '\.py[co]$[[file]]',
-            \ '\~$[[file]]',
-            \ '\.\(class\|beam\|o\)$[[file]]',
-            \ '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$[[file]]'
-            \]
+  \ '\(vendor\|node_modules\|deps\|build\|package\|tmp\|coverage\)$[[dir]]',
+  \ '\(build\|ebin\|target\|__pycache__\)$[[dir]]',
+  \ '\.py[co]$[[file]]',
+  \ '\~$[[file]]',
+  \ '\.\(class\|beam\|o\)$[[file]]',
+  \ '\.\(jpg\|png\|gif\|pdf\|ico\|JPG\|PNG\|GIF\|PDF\|ICO\)$[[file]]'
+  \]
 let NERDTreeChDirMode=2
 let NERDTreeMinimalUI=1
 let NERDTreeShowBookmarks=1
@@ -278,18 +271,21 @@ vnoremap > >gv
 vnoremap < <gv
 
 " ctrlp
-let g:ctrlp_open_new_file = "v"
-let g:ctrlp_open_multiple_files = "v"
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules|bower_components)$',
-  \ }
+let g:ctrlp_open_new_file="v"
+let g:ctrlp_open_multiple_files="v"
+let g:ctrlp_extensions=['tag']
+let g:ctrlp_custom_ignore={
+  \ 'dir': '\v[\/](\.(git|hg|svn)|node_modules)$',
+  \}
 
-" colour lines with errors and warnings
+" colour lines with syntastic errors and warnings
 let g:syntastic_enable_signs=1
-let g:syntastic_python_python_exec='python3'
-let g:syntastic_python_flake8_exec='python3'
 highlight SyntasticErrorLine guibg=#550000
 highlight SyntasticWarningLine guibg=#331d1e
+
+" use python 3 for syntastic python checks
+let g:syntastic_python_python_exec='python3'
+let g:syntastic_python_flake8_exec='python3'
 
 " airline
 set laststatus=2
@@ -298,39 +294,32 @@ let g:airline_powerline_fonts=1
 " indent guides
 let g:indent_guides_enable_on_vim_startup=1
 let g:indent_guides_start_level=2
-let g:indent_guides_guide_size=1
-let g:indent_guides_color_change_percent=3
 let g:indent_guides_exclude_filetypes=['help', 'nerdtree']
+let g:indent_guides_auto_colors=0
+" let g:indent_guides_guide_size=1
+highlight IndentGuidesOdd  ctermbg=233
+highlight IndentGuidesEven ctermbg=234
 
 " tagbar
-nnoremap <silent> <Leader>b :TagbarToggle<CR>
-
-" define :Gsync command to update and push
-if !exists("*Gsync")
-    function Gsync()
-        Git up
-        Git push
-    endfunction
-    command Gsync :call Gsync()
-    command Gst :Gstatus
-endif
+"nnoremap <silent> <Leader>b :TagbarToggle<CR>
 
 " paste toggle shortcut
-set pastetoggle=<F2>
+"set pastetoggle=<F2>
+nnoremap <leader>p :set invpaste<CR>
 
 " format JSON
 nnoremap <silent> <Leader>jf :%!python -m json.tool<CR>
 
 " Apply vim-jsx to .js files
-let g:jsx_ext_required = 0
+let g:jsx_ext_required=0
 
-" dbext
-let g:dbext_default_window_width = 80
-let g:dbext_default_profile_millau = 'type=MYSQL:dbname=millau'
-let g:dbext_default_profile = 'millau'
+" YouCompleteMe
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_min_num_identifier_candidate_chars=4
+let g:ycm_error_symbol='x'
+let g:ycm_warning_symbol='!'
 
-" source the vimrc and gvimrc files after saving
-if has("autocmd")
-    autocmd bufwritepost .vimrc source $MYVIMRC
-    autocmd bufwritepost .gvimrc source $MYGVIMRC
-endif
+nnoremap <leader>y :YcmForceCompileAndDiagnostics<CR>
+nnoremap <leader>pg :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>pc :YcmCompleter GoToDeclaration<CR>
